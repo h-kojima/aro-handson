@@ -48,4 +48,6 @@ GitHubからプロジェクトをインポートして開発を進めます。`I
 - Import recursively (for multi-module projects)　にチェックを入れます
 - Name: cloud-native-workshop-v2m1-labs
 
-プロジェクトタイプは`Blank`を選択して、`Save`をクリックします。
+プロジェクトタイプは`Blank`を選択して、`Save`をクリックします。プロジェクトのインポートが完了したら、下記のようなMavenアイコンが表示されているか確認します。Mavenアイコンが表示されていない場合は、それぞれのプロジェクトを右クリックして、`Convert to Project`を選択し、`Maven`を選択して`Save`をクリックします。
+
+
