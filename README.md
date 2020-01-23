@@ -29,6 +29,8 @@ $ ./deploy.sh --deploy \
   -p=<YOUR_CODEREADY_PROJECT_NAME>
 ```
 
+## ハンズオン実施
+
 CodeReady Workspacesのデプロイが完了したら、`username: admin, password: admin`でログインします。ログイン後は、作業スペースとなるWorkspaceを作成します。`Spring Boot`スタックを選択して、`Create and Proceed Editing`をクリックします。
 
 <img src="https://github.com/h-kojima/openshift/blob/master/arohandson/images/crw-create.png" width="100%" height="100%">
@@ -54,6 +56,6 @@ GitHubからプロジェクトをインポートして開発を進めます。`I
 <img src="https://github.com/h-kojima/aro-handson/blob/master/images/codeready-workspace-convert.dms.png" width="50%" height="50%">
 <img src="https://github.com/h-kojima/aro-handson/blob/master/images/codeready-workspace-maven.png" width="50%" height="50%">
 
-これより先は、下記コンテンツの「13. Add an OpenShift profile」から、順番に実行していってください。それより上段のコンテンツは、本ハンズオンでは省略します。
+これより先は、下記コンテンツの「13. Add an OpenShift profile」から、順番に実行していってください。それより上段のコンテンツは、本ハンズオンでは省略します。このコンテンツではログインユーザとして`userXX`を指定していますが、本ハンズオンで利用するアカウント名に変更して読み替えてください。また、プロジェクトは何も作られていない状態ですので、`oc new-project`などで適宜作成する必要がありますので、ご注意ください。
 
 https://bit.ly/36lLEAe
