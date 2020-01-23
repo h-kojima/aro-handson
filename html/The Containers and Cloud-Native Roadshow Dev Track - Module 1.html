@@ -936,7 +936,7 @@ plus Red Hat OpenShift bring to the table.</p>
 
 <hr>
 
-<p>First, open a new brower with the <a href="https://console-openshift-console.apps.cluster-tokyo-069d.tokyo-069d.open.redhat.com/" target="_blank">OpenShift web console</a></p>
+<p>First, open a new brower with the ARO web console</p>
 
 <p><img src="The%20Containers%20and%20Cloud-Native%20Roadshow%20Dev%20Track%20-%20Module%201_files/openshift_login.dms" alt="openshift_login"></p>
 
@@ -944,7 +944,6 @@ plus Red Hat OpenShift bring to the table.</p>
 
 <ul>
   <li>Username: <code>userXX</code></li>
-  <li>Password: <code>r3dh4t1!</code></li>
 </ul>
 
 <blockquote>
@@ -998,44 +997,30 @@ For example, if you’re using <strong>Chrome</strong>, you will see the followi
 completed other modules, you’re probably already logged in, but let’s 
 login again: open a Terminal and issue the following command:</p>
 
-<p><code>oc login https://$KUBERNETES_SERVICE_HOST:$KUBERNETES_SERVICE_PORT --insecure-skip-tls-verify=true</code></p>
+<p><code>oc login https://<ADDRESS_OF_ARO> --token=<YOUR_TOKEN></code></p>
 
 <p>Enter your username and password assigned to you:</p>
 
 <ul>
   <li>Username: <code>userXX</code></li>
-  <li>Password: <code>r3dh4t1!</code></li>
 </ul>
 
 <p>You should see like:</p>
 
-<pre><code class="language-shell">Login successful.
+<pre><code class="language-shell">Login successful.</code></pre>
 
-You have access to the following projects and can switch between them with 'oc project &lt;projectname&gt;':
-
-  * default
-    istio-system
-    user0-bookinfo
-    user0-catalog
-    user0-cloudnative-pipeline
-    user0-cloudnativeapps
-    user0-inventory
-
-Using project "default".
-Welcome! See 'oc help' to get started.
-</code></pre>
 
 <p>Switch to the developer project you created earlier via CodeReady Workspaces Terminal window:</p>
 
-<p><code>oc project userXX-coolstore-dev</code></p>
+<p><code>oc new-project userXX-coolstore-dev</code></p>
 
 <p>And finally deploy template:</p>
 
-<p><code>oc new-app coolstore-monolith-binary-build</code></p>
+<p><code>oc new-app oc new-app https://raw.githubusercontent.com/h-kojima/aro-handson/master/coolstore-monolith-binary-build.yml</code></p>
 
 <p>This will deploy both a PostgreSQL database and JBoss EAP, but it will not start a build for our application.</p>
 
-<p>Then open up the <code>userXX-coolstore-dev</code> project status page at <a href="https://console-openshift-console.apps.cluster-tokyo-069d.tokyo-069d.open.redhat.com/" target="_blank">OpenShift web console</a></p>
+<p>Then open up the <code>userXX-coolstore-dev</code> project status page at ARO web console</p>
 
 <p>and verify the monolith template items are created:</p>
 
@@ -1624,7 +1609,7 @@ name, and then set the current profile to that name.</p>
 <p>Our production inventory microservice will use an external database (PostgreSQL) to house inventory data.
 First, deploy a new instance of PostgreSQL by executing the following commands via CodeReady Workspaces Terminal:</p>
 
-<p><code>oc project userXX-inventory</code></p>
+<p><code>oc new-project userXX-inventory</code></p>
 
 <p>Then run:</p>
 
@@ -2005,7 +1990,7 @@ unhealthy.</p>
 
 <p><img src="The%20Containers%20and%20Cloud-Native%20Roadshow%20Dev%20Track%20-%20Module%201_files/inventory-fail.dms" alt="Greeting"></p>
 
-<p>At this point, return to the <a href="https://console-openshift-console.apps.cluster-tokyo-069d.tokyo-069d.open.redhat.com/" target="_blank">OpenShift web console</a> and click on the <em>Pods</em> on the left menu. Notice that the
+<p>At this point, return to the ARO web console and click on the <em>Pods</em> on the left menu. Notice that the
 <strong>ContainersNotReady</strong> indicates the application is failing its <em>readiness probe</em>:</p>
 
 <p><img src="The%20Containers%20and%20Cloud-Native%20Roadshow%20Dev%20Track%20-%20Module%201_files/notready.dms" alt="Not Ready"></p>
@@ -3032,7 +3017,7 @@ so let’s create a separate project to house it and keep it separate from
 <p>Our production catalog microservice will use an external database (PostgreSQL) to house inventory data.
 First, deploy a new instance of PostgreSQL by executing via CodeReady Workspaces Terminal:</p>
 
-<p><code>oc project userXX-catalog</code></p>
+<p><code>oc new-project userXX-catalog</code></p>
 
 <pre><code class="language-shell">oc new-app -e POSTGRESQL_USER=catalog \
              -e POSTGRESQL_PASSWORD=mysecretpassword \
@@ -3162,7 +3147,7 @@ with running in 1 pod, along with the Postgres database pod.</p>
 
 <p>This sample project includes a simple UI that allows you to access the Inventory API. This is the same
 UI that you previously accessed outside of OpenShift which shows the CoolStore inventory. Click on the
-route URL at <strong>Networking &gt; Routes</strong> in <a href="https://console-openshift-console.apps.cluster-tokyo-069d.tokyo-069d.open.redhat.com/" target="_blank">OpenShift web console</a> to access the sample UI.</p>
+route URL at <strong>Networking &gt; Routes</strong> in ARO web console to access the sample UI.</p>
 
 <blockquote>
   <p>You can also access the application through the link on Resources tab in the Project Status page.</p>
@@ -3303,7 +3288,7 @@ rolled out:</p>
 
 <hr>
 
-<p>Open the monolith UI at by selecting the <code>userXX-coolstore-dev</code> project in the <a href="https://console-openshift-console.apps.cluster-tokyo-069d.tokyo-069d.open.redhat.com/" target="_blank">OpenShift web console</a>, navigate to <em>Networking &gt; Routes</em> and click on the link to the monolith UI.</p>
+<p>Open the monolith UI at by selecting the <code>userXX-coolstore-dev</code> project in the ARO web console, navigate to <em>Networking &gt; Routes</em> and click on the link to the monolith UI.</p>
 
 <p>Observe that the new catalog is being used along with the monolith:</p>
 
