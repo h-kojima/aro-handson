@@ -9,7 +9,7 @@
 - 開発ツールとして利用する、Red Hat Codeready WorkspacesがARO上にデプロイされていること
 
 ### Red Hat CodeReady WorkspacesのAROへのデプロイ
-開発ツールとして利用する[Red Hat CodeReady Workspaces](https://developers.redhat.com/products/codeready-workspaces/overview)をARO上にデプロイいます。Red Hat CodeReady WorkspacesはEclipse CheをベースにしたクラウドIDE(IntelliJ IDEA、VSCode、Eclipse IDEに類似)であり、本ハンズオンでは、ここからコードを記述、テスト、デプロイします。
+開発ツールとして利用する[Red Hat CodeReady Workspaces](https://developers.redhat.com/products/codeready-workspaces/overview)をARO上にデプロイします。Red Hat CodeReady WorkspacesはEclipse CheをベースにしたクラウドIDE(IntelliJ IDEA、VSCode、Eclipse IDEに類似)であり、本ハンズオンでは、ここからコードを記述、テスト、デプロイします。
 
 Red Hat CodeReady Workspacesのインストール用プログラムを、[Red Hat Developer](https://developers.redhat.com/)からダウンロードします。Red Hat Developerは開発者向けに様々なRed Hatのリソースを提供しているサイトです。こちらに登録してRed Hat Developer Suiteサブスクリプションを取得することで、RHEL, OpenShift, JBoss EAPを始めとした各種ミドルウェア製品をダウンロードできるようになります。**1ユーザ(共用不可)、1台のみ、ソフトウェア開発用途のみ**、と用途は限定されますが、その代わり1年間有効のサブスクリプションとなっていて有効期限が切れたら再度更新することもできます。Red Hat Codeready Workspacesのダウンロードサイトは下記です。
 
@@ -33,9 +33,9 @@ CodeReady Workspacesのデプロイが完了したら、`username: admin, passwo
 
 <img src="https://github.com/h-kojima/openshift/blob/master/arohandson/images/crw-create.png" width="100%" height="100%">
 
-`Config`のJSONファイルを編集します。本ハンズオン用に提供しています専用のコンテナイメージを利用してWorkspaceを作成しますので、参照するイメージのURLを`registry.redhat.io/codeready-workspaces/stacks-java-rhel8`から`quay.io/openshiftlabs/cloudnative-workspaces-quarkus:1.3`に変更します。そして、右上の`RUN`を実行します。
+`Config`のJSONファイルを編集します。既存の内容を全て削除して、下記URLのJSONファイルの内容に置換してください。下記ではWorkspaceの名前を`wksp-XXXX`としていますが、ユーザ名を利用するなど適宜変更してください。その後、右上の`RUN`を実行します。
 
-<img src="https://github.com/h-kojima/openshift/blob/master/arohandson/images/workspace-config.png" width="100%" height="100%">
+https://github.com/h-kojima/aro-handson/blob/master/workspace-config.json
 
 5~10分程待つと、Workspaceが作成されて下記のような画面が表示されます。
 
