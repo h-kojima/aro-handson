@@ -1,0 +1,5 @@
+com/redhat/coolstore/CORSProvider.class
+com/redhat/coolstore/InventoryResource$ErrorMapper.class
+com/redhat/coolstore/InventoryHealthCheck.class
+com/redhat/coolstore/Inventory.class
+com/redhat/coolstore/InventoryResource.class
