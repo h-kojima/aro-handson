@@ -40,3 +40,12 @@ https://github.com/h-kojima/aro-handson/blob/master/workspace-config.json
 5~10分程待つと、Workspaceが作成されて下記のような画面が表示されます。
 
 <img src="https://github.com/h-kojima/openshift/blob/master/arohandson/images/workspaces-init.png" width="100%" height="100%">
+
+GitHubからプロジェクトをインポートして開発を進めます。`Import Project...`をクリックして、次の項目を指定して`Import`をクリックします。
+
+- Version Control System: GITHUB
+- URL: https://github.com/h-kojima/cloud-native-workshop-v2m1-labs
+- Import recursively (for multi-module projects)　にチェックを入れます
+- Name: cloud-native-workshop-v2m1-labs
+
+プロジェクトタイプは`Blank`を選択して、`Save`をクリックします。
