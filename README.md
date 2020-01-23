@@ -60,6 +60,31 @@ GitHubからプロジェクトをインポートして開発を進めます。`I
 
 https://bit.ly/36lLEAe
 
-## (オプション) Red Hat Application Migration Toolkit (RHAMT) によるアプリ移行時の分析
-RHAMTはソースコード
+## (オプション項目) Red Hat Application Migration Toolkit (RHAMT) によるJavaアプリ移行時の分析
+RHAMTはアプリケーションを分析し、JavaのコードやJSP、XMLなどで、修正を必要とするところをHTML形式でレポートします。Red Hatがサポートを提供しているソフトウェアではありませんが、無償で利用することができます。対応している移行パスは、Oracle JDKからOpen JDK、JBoss EAPのアップグレード、WebLogic/WebSphereからJBoss EAPといったものがあります。RHAMTのレポートを参照すると、CodeReady WorkspaceやVisual Studio Codeなどでの効率的なJavaアプリケーションの開発ができるようになります。
+
+https://access.redhat.com/documentation/en-us/red_hat_application_migration_toolkit/4.3/html-single/getting_started_guide/index#supported_configurations
+
+RHAMTもRed Hat Developerで提供しています。利用するには、下記からRHAMTをダウンロードします。
+
+https://developers.redhat.com/products/rhamt/download
+
+RHAMTを簡単に試してみたい場合は、上記から`Web Console`版をダウンロードして、ローカルかOpenShift上のコンテナアプリケーションとして実行します。ただし、OpenShift上にデプロイする場合は、デプロイスクリプトの実行プラットフォームがLinuxとmacOSのみ対応となっており、Windowsでは実行できませんのでご注意ください。ローカルで実行するときは、下記のガイドに沿ってください。
+
+https://access.redhat.com/documentation/en-us/red_hat_application_migration_toolkit/4.3/html-single/web_console_guide/index#zip_install
+
+OpenShift上にデプロイするときは、こちらのガイドに沿ってください。OpenShiftのプロジェクトにインポートするJSONファイルは、`<RHAMTのzipファイルを解凍したディレクトリ>/openshift/templates/template-empty-dir-executor.json`を指定します。
+
+https://access.redhat.com/documentation/en-us/red_hat_application_migration_toolkit/4.3/html-single/web_console_guide/index#openshift_install
+
+デフォルトのユーザ認証は、`rhamt/password`です。ログインできたら、下記のガイドに沿ってJavaアプリケーションを分析してみましょう。本ハンズオン用に、WebLogicからJBoss EAPへの移行シナリオを想定した2種類のWARファイルを用意しました。
+
+- [WebLogic用のコードが組み込まれているWARファイル](https://github.com/h-kojima/aro-handson/blob/master/rhamt/monolith.war)
+- [このコードをJBoss EAP用に修正したWARファイル](https://github.com/h-kojima/aro-handson/blob/master/rhamt/monolith-fixed.war)です。
+
+https://access.redhat.com/documentation/en-us/red_hat_application_migration_toolkit/4.3/html-single/web_console_guide/index#using_web_console_analyze_apps
+
+これらのWARファイルを利用して、RHAMT上でどのようなHTMLレポートが表示されるか確認してみてください。実行手順と表示されるHTMLレポートについては、下記コンテンツの「Lab1 - Decide which Application Server to use in OpenShift」を参考にできます。
+
+https://bit.ly/36lLEAe
 
