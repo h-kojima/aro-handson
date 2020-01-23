@@ -1492,7 +1492,9 @@ public class InventoryEndpointTest {
 <p><code>cd /projects/cloud-native-workshop-v2m1-labs/inventory</code></p>
 
 <p><code>mvn clean package</code></p>
-If OutofMemory Error occures, then execute following the code.
+
+<p>If OutofMemory Error occures, then execute following the code.</p>
+
 <p><code>MAVEN_OPTS="-Xmx1024M -Xss128M -XX:MetaspaceSize=512M -XX:MaxMetaspaceSize=1024M -XX:+CMSClassUnloadingEnabled" mvn clean package</code></p>
 
 <p>If builds successfully (you will see <strong>BUILD SUCCESS</strong>), continue to the next step to deploy the application to OpenShift.</p>
