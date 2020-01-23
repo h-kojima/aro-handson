@@ -54,4 +54,6 @@ GitHubからプロジェクトをインポートして開発を進めます。`I
 <img src="https://github.com/h-kojima/aro-handson/blob/master/images/codeready-workspace-convert.dms.png" width="50%" height="50%">
 <img src="https://github.com/h-kojima/aro-handson/blob/master/images/codeready-workspace-maven.png" width="50%" height="50%">
 
+これより先は、下記コンテンツの「13. Add an OpenShift profile」から、順番に実行していってください。それより上段のコンテンツは、本ハンズオンでは省略します。
 
+https://bit.ly/36lLEAe
