@@ -50,4 +50,8 @@ GitHubからプロジェクトをインポートして開発を進めます。`I
 
 プロジェクトタイプは`Blank`を選択して、`Save`をクリックします。プロジェクトのインポートが完了したら、下記のようなMavenアイコンが表示されているか確認します。Mavenアイコンが表示されていない場合は、それぞれのプロジェクトを右クリックして、`Convert to Project`を選択し、`Maven`を選択して`Save`をクリックします。
 
+<img src="https://github.com/h-kojima/aro-handson/blob/master/images/maven-icon.dms.png" width="50%" height="50%">
+<img src="https://github.com/h-kojima/aro-handson/blob/master/images/codeready-workspace-convert.dms.png" width="50%" height="50%">
+<img src="https://github.com/h-kojima/aro-handson/blob/master/images/codeready-workspace-maven.png" width="50%" height="50%">
+
 
