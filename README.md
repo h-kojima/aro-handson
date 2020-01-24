@@ -47,7 +47,11 @@ $ ./deploy.sh --deploy \
 
 ## ハンズオン実施
 
-CodeReady Workspacesのデプロイが完了したら、`username: admin, password: admin`でログインします。ログイン後は、作業スペースとなるWorkspaceを作成します。`Spring Boot`スタックを選択して、`Create and Proceed Editing`をクリックします。
+CodeReady Workspacesのデプロイが完了したら、`username: admin, password: admin`でログインします。AROのWebコンソールの`http://XXX.apps.YYYY.eastus.azmosa.io`からログインします。
+
+<img src="https://github.com/h-kojima/aro-handson/blob/master/images/aro-overview.png" width="100%" height="100%">
+
+ログイン後は、作業スペースとなるWorkspaceを作成します。`Spring Boot`スタックを選択して、`Create and Proceed Editing`をクリックします。
 
 <img src="https://github.com/h-kojima/openshift/blob/master/arohandson/images/crw-create.png" width="100%" height="100%">
 
