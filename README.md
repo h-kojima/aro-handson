@@ -31,7 +31,7 @@ https://developers.redhat.com/products/codeready-workspaces/download
 
 
 
-Red Hat CodeReady Workspacesの最新版は2.0までリリースしていますが、本ハンズオンでは、1.0.2 をダウンロードしてください。ダウンロード後にインストーラを解凍して下記を実行します。このコマンドで、ARO上に`<YOUR_CODEREADY_PROJECT_NAME>`プロジェクトが自動的に作成され、その中にRed Hat CodeReady Workspacesのコンテナアプリがデプロイされます。なおプロジェクト名は、アカウント名を先頭や末尾につけるなどして、一意になるようにしてください。また、`./deploy.sh`では、`./oc`ではなく`oc`コマンドが呼び出されるので、`/bin`などにPATHを通すのを忘れないようにしてください。
+Red Hat CodeReady Workspacesの最新版は2.0までリリースしていますが、本ハンズオンでは、1.0.2 をダウンロードしてください。ダウンロード後にインストーラを解凍して下記を実行します。このコマンドで、ARO上に`<YOUR_CODEREADY_PROJECT_NAME>`プロジェクトが自動的に作成され、その中にRed Hat CodeReady Workspacesのコンテナアプリがデプロイされます。なおプロジェクト名は、アカウント名を先頭や末尾につけるなどして、一意になるようにしてください。また、`./deploy.sh`実行時には、`./oc`ではなく`oc`コマンドが自動的に呼び出されるので、`/bin`などにPATHを通すのを忘れないようにしてください。
 
 ```
 $ oc login https://<URL_of_ARO> --token=<token_of_your_ARO>
