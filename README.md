@@ -18,9 +18,11 @@ Q&A対応用途のEtherpadアプリケーションをARO上で起動していま
 
 http://etherpad-etherpad.apps.00b1273e407f49efbd7a.eastus.azmosa.io/p/20200124-aro-handson
 
-## 前準備
+## 前提条件
 - ARO環境にログインできていること
-- OpenShiftのCLIツールである[ocコマンド](https://mirror.openshift.com/pub/openshift-v3/clients/3.11.154/)をダウンロードして、実行できるようにしていること(ocコマンドのPATHを設定して、`./oc`ではなく`oc`コマンドが実行できるようにしていること)
+- bashなどでシェルスクリプトが実行できること
+- OpenShiftのCLIツールである[ocコマンド](https://mirror.openshift.com/pub/openshift-v3/clients/3.11.154/)をダウンロードして、実行できるようにしていること
+  - `/bin`などにPATHを通して、`./oc`ではなく`oc`コマンドが実行できるようにしていること
   - [Linux](https://mirror.openshift.com/pub/openshift-v3/clients/3.11.154/linux/)/[macOS](https://mirror.openshift.com/pub/openshift-v3/clients/3.11.154/macosx/)/[Windows](https://mirror.openshift.com/pub/openshift-v3/clients/3.11.154/windows/)
 - 開発ツールとして利用する、Red Hat Codeready WorkspacesがARO上にデプロイされていること
 
