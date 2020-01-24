@@ -51,6 +51,8 @@ CodeReady Workspacesのデプロイが完了したら、`username: admin, passwo
 
 https://github.com/h-kojima/aro-handson/blob/master/workspace-config.json
 
+<img src="https://github.com/h-kojima/aro-handson/blob/master/images/wksp-name.png" width="100%" height="100%">
+
 5~10分程待つと、Workspaceが作成されて下記のような画面が表示されます。
 
 <img src="https://github.com/h-kojima/openshift/blob/master/arohandson/images/workspaces-init.png" width="100%" height="100%">
