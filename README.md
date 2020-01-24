@@ -47,7 +47,7 @@ $ ./deploy.sh --deploy \
 
 ## ハンズオン実施
 
-CodeReady Workspacesのデプロイが完了したら、`username: admin, password: admin`でログインします。AROのWebコンソールの`http://XXX.apps.YYYY.eastus.azmosa.io`からログインします。
+CodeReady Workspacesのデプロイが完了したら、`username: admin, password: admin`でログインします。AROのWebコンソールの`http://codeready-XXX.apps.YYYY.eastus.azmosa.io`からログインします。
 
 <img src="https://github.com/h-kojima/aro-handson/blob/master/images/aro-overview.png" width="100%" height="100%">
 
