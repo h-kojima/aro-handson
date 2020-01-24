@@ -14,6 +14,9 @@
 
 このコンテンツは、Red Hatが提供している[OpenShiftのハンズオンコンテンツの一部](https://github.com/RedHat-Middleware-Workshops/cloud-native-workshop-v2m1-guides)をベースにしています。他にも[様々なコンテンツ](https://github.com/RedHat-Middleware-Workshops)を提供していますので、興味がありましたらご参照ください。
 
+Q&A対応用途のEtherpadアプリケーションをARO上で起動しています。ご質問がありましたら、適宜こちらに記載ください。
+http://etherpad-etherpad.apps.00b1273e407f49efbd7a.eastus.azmosa.io/p/20200124-aro-handson#
+
 ## 前準備
 - ARO環境にログインできていること
 - OpenShiftのCLIツールである[ocコマンド](https://mirror.openshift.com/pub/openshift-v3/clients/3.11.154/)をダウンロードして、実行できるようにしていること
