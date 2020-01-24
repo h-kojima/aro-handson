@@ -78,6 +78,11 @@ GitHubからプロジェクトをインポートして開発を進めます。`I
 
 また、下記コンテンツはOpenShift v4版スクリーンショットになりますが、AROは現在OpenShift v3ベースなので、Webインタフェースの表示が異なります。リソースメニューの表示も若干異なりますので、ご注意ください。
 
+**注意点**
+
+CodeReady WorkspacesのTerminalでは`oc`コマンドを最初から実行できるようになっていますが、本ハンズオンではCodeReady WorkspacesのTerminalでもARO環境へのログインをする必要がありますので、ご注意ください。
+
+
 https://bit.ly/36lLEAe
 
 ## (オプション項目) Red Hat Application Migration Toolkit (RHAMT) によるJavaアプリ移行時の分析
