@@ -70,7 +70,7 @@ GitHubからプロジェクトをインポートして開発を進めます。`I
 <img src="https://github.com/h-kojima/aro-handson/blob/master/images/codeready-workspace-convert.dms.png" width="50%" height="50%">
 <img src="https://github.com/h-kojima/aro-handson/blob/master/images/codeready-workspace-maven.png" width="50%" height="50%">
 
-これより先は、下記コンテンツの「13. Add an OpenShift profile」から、順番に実行していってください。それより上段のコンテンツは、本ハンズオンでは省略します。このコンテンツではログインユーザとして`userXX`を指定していますが、本ハンズオンで利用するアカウント名に変更して読み替えてください。また、プロジェクトは何も作られていない状態ですので、`oc new-project`などで適宜作成する必要があります。
+これより先は、下記コンテンツの「**13. Add an OpenShift profile**」から、順番に実行していってください。それより上段のコンテンツは、本ハンズオンでは省略します。このコンテンツではログインユーザとして`userXX`を指定していますが、本ハンズオンで利用するアカウント名に変更して読み替えてください。また、プロジェクトは何も作られていない状態ですので、`oc new-project`などで適宜作成する必要があります。
 
 https://bit.ly/36lLEAe
 
@@ -98,7 +98,7 @@ https://access.redhat.com/documentation/en-us/red_hat_application_migration_tool
 
 https://access.redhat.com/documentation/en-us/red_hat_application_migration_toolkit/4.3/html-single/web_console_guide/index#using_web_console_analyze_apps
 
-これらのWARファイルを利用して、RHAMT上でどのようなHTMLレポートが表示されるか確認してみてください。表示されるHTMLレポートの内容については、下記コンテンツの「Lab1 - Decide which Application Server to use in OpenShift」を参考にできます。
+これらのWARファイルを利用して、RHAMT上でどのようなHTMLレポートが表示されるか確認してみてください。表示されるHTMLレポートの内容については、下記コンテンツの「**Lab1 - Decide which Application Server to use in OpenShift**」を参考にできます。
 
 https://bit.ly/36lLEAe
 
