@@ -15,7 +15,7 @@ angular.module("app")
 		}
 	}
 	
-	baseUrl="http://catalog-springboot-user00-catalog.apps.3cb3039dbab44a0298fa.southeastasia.azmosa.io/services/products";
+	baseUrl="http://catalog-springboot-user00-catalog.apps.XXXX.southeastasia.azmosa.io/services/products";
 
 	factory.getProducts = function() {
 		var deferred = $q.defer();
