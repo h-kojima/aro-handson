@@ -20,7 +20,7 @@ http://etherpad-etherpad.apps.00b1273e407f49efbd7a.eastus.azmosa.io/p/20200124-a
 
 ## 前準備
 - ARO環境にログインできていること
-- OpenShiftのCLIツールである[ocコマンド](https://mirror.openshift.com/pub/openshift-v3/clients/3.11.154/)をダウンロードして、実行できるようにしていること
+- OpenShiftのCLIツールである[ocコマンド](https://mirror.openshift.com/pub/openshift-v3/clients/3.11.154/)をダウンロードして、実行できるようにしていること(ocコマンドのPATHを設定して、`./oc`ではなく`oc`コマンドが実行できるようにしていること)
   - [Linux](https://mirror.openshift.com/pub/openshift-v3/clients/3.11.154/linux/)/[macOS](https://mirror.openshift.com/pub/openshift-v3/clients/3.11.154/macosx/)/[Windows](https://mirror.openshift.com/pub/openshift-v3/clients/3.11.154/windows/)
 - 開発ツールとして利用する、Red Hat Codeready WorkspacesがARO上にデプロイされていること
 
@@ -75,6 +75,8 @@ GitHubからプロジェクトをインポートして開発を進めます。`I
 <img src="https://github.com/h-kojima/aro-handson/blob/master/images/codeready-workspace-maven.png" width="50%" height="50%">
 
 これより先は、下記コンテンツの「**13. Add an OpenShift profile**」から、順番に実行していってください。それより上段のコンテンツは、本ハンズオンでは省略します。このコンテンツではログインユーザとして`userXX`を指定していますが、本ハンズオンで利用するアカウント名に変更して読み替えてください。また、プロジェクトは何も作られていない状態ですので、`oc new-project`などで適宜作成する必要があります。
+
+また、下記コンテンツはOpenShift v4版スクリーンショットになりますが、AROは現在OpenShift v3ベースなので、Webインタフェースの表示が異なります。リソースメニューの表示も若干異なりますので、ご注意ください。
 
 https://bit.ly/36lLEAe
 
