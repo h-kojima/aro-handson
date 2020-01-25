@@ -24,8 +24,8 @@
 - [ラーニングポータルサイト](https://learn.openshift.com/)の下記コースで紹介しているOpenShiftの基礎知識を習得していること
   - [Foundations of OpenShift](https://learn.openshift.com/introduction/)
   - [Subsystems, Components, and Internals](https://learn.openshift.com/subsystems/)
-- ARO環境にログインできること
-- 開発ツールとして利用する、Red Hat Codeready WorkspacesがARO上にデプロイされていること
+- ARO環境にログインできること (ハンズオン当日にご紹介)
+- Red Hat Codeready WorkspacesがARO上にデプロイされていること (ハンズオン当日にご紹介)
 
 ### Red Hat CodeReady WorkspacesのAROへのデプロイ
 開発ツールとして利用する[Red Hat CodeReady Workspaces](https://developers.redhat.com/products/codeready-workspaces/overview)をARO上にデプロイします。Red Hat CodeReady WorkspacesはEclipse CheをベースにしたクラウドIDE(IntelliJ IDEA、VSCode、Eclipse IDEに類似)であり、本ハンズオンでは、ここからコードを記述、テスト、デプロイします。
