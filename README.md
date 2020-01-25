@@ -101,7 +101,7 @@ GitHubからプロジェクトをインポートして開発を進めます。`I
 
 **注意点**
 
-**CodeReady WorkspacesのTerminalでは`oc`コマンドを最初から実行できるようになっていますが、本ハンズオンではCodeReady WorkspacesのWorkspaceのTerminalでもARO環境へのログインをする必要がありますので、ご注意ください。**
+**CodeReady WorkspacesのTerminalでは`oc`コマンドを最初から実行できるようになっていますが、本ハンズオンではCodeReady WorkspacesのTerminalでもARO環境へのログインをする必要がありますので、ご注意ください。**
 
 
 https://bit.ly/36lLEAe
