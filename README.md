@@ -32,13 +32,26 @@
 ### Red Hat CodeReady WorkspacesのAROへのデプロイ
 開発ツールとして利用する[Red Hat CodeReady Workspaces](https://developers.redhat.com/products/codeready-workspaces/overview)をARO上にデプロイします。Red Hat CodeReady WorkspacesはEclipse CheをベースにしたクラウドIDE(IntelliJ IDEA、VSCode、Eclipse IDEに類似)であり、本ハンズオンでは、ここからコードを記述、テスト、デプロイします。
 
-Red Hat CodeReady Workspacesのインストール用プログラムを、[Red Hat Developer](https://developers.redhat.com/)からダウンロードします。Red Hat Developerは開発者向けに様々なRed Hatのリソースを提供しているサイトです。こちらに登録してRed Hat Developer Suiteサブスクリプションを取得することで、RHEL, OpenShift, JBoss EAPを始めとした各種ミドルウェア製品をダウンロードできるようになります。**1ユーザ(共用不可)、1台のみ、ソフトウェア開発用途のみ**、と用途は限定されますが、その代わり1年間有効のサブスクリプションとなっていて有効期限が切れたら再度更新することもできます。Red Hat Codeready Workspacesのダウンロードサイトは下記です。
+Red Hat CodeReady Workspacesのインストール用プログラムを、[Red Hat Developer](https://developers.redhat.com/)からダウンロードします。Red Hat Developerは開発者向けに様々なRed Hatのリソースを提供しているサイトです。こちらに登録してRed Hat Developer Suiteサブスクリプションを取得することで、RHEL, OpenShift, JBoss EAPを始めとした各種ミドルウェア製品をダウンロードできるようになります。**1ユーザ(共用不可)、1台のみ、ソフトウェア開発用途のみ**、と用途は限定されますが、その代わり1年間有効のサブスクリプションとなっていて有効期限が切れたら再度更新することもできます。Red Hat Codeready Workspacesのダウンロードサイトは下記です。Red Hat CodeReady Workspacesの最新版は2.0までリリースしていますが、本ハンズオンでは、`1.0.2`のインストーラをダウンロードしてください。
 
 https://developers.redhat.com/products/codeready-workspaces/download
 
+インストーラを実行する前に、`oc`コマンドを実行してARO環境にログインします。ログインコマンドは、AROのWebコンソールの`Copy Login Command`からコピーできます。
 
+<img src="https://github.com/h-kojima/aro-handson/blob/master/images/copy-login.png" width="100%" height="100%">
 
-Red Hat CodeReady Workspacesの最新版は2.0までリリースしていますが、本ハンズオンでは、1.0.2 をダウンロードしてください。ダウンロード後にインストーラを解凍して下記を実行します。このコマンドで、ARO上に`<YOUR_CODEREADY_PROJECT_NAME>`プロジェクトが自動的に作成され、その中にRed Hat CodeReady Workspacesのコンテナアプリがデプロイされます。なおプロジェクト名は、アカウント名を先頭や末尾につけるなどして、一意になるようにしてください。また、`./deploy.sh`実行時には、`./oc`ではなく`oc`コマンドが自動的に呼び出されるので、`/bin`などにPATHを通すのを忘れないようにしてください。
+```
+$ oc login https://<URL_of_ARO> --token=<token_of_your_ARO>
+Logged into "https://openshift.3cb3039dbab44a0298fa.southeastasia.azmosa.io:443" as "arouser00@azure.opentlc.com" using the token provided.
+
+You don't have any projects. You can try to create a new project, by running
+
+    oc new-project <projectname>
+
+$ 
+```
+
+ダウンロード後にインストーラを解凍して下記を実行します。このコマンドで、ARO上に`<YOUR_CODEREADY_PROJECT_NAME>`プロジェクトが自動的に作成され、その中にRed Hat CodeReady Workspacesのコンテナアプリがデプロイされます。なおプロジェクト名は、アカウント名を先頭や末尾につけるなどして、一意になるようにしてください。
 
 ```
 $ oc login https://<URL_of_ARO> --token=<token_of_your_ARO>
