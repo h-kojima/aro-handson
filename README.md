@@ -19,7 +19,7 @@
 - OpenShiftのCLIツールである[ocコマンド](https://mirror.openshift.com/pub/openshift-v3/clients/3.11.154/)([Linux](https://mirror.openshift.com/pub/openshift-v3/clients/3.11.154/linux/)/[macOS](https://mirror.openshift.com/pub/openshift-v3/clients/3.11.154/macosx/)/[Windows](https://mirror.openshift.com/pub/openshift-v3/clients/3.11.154/windows/))をダウンロードして、実行できること
   - `/bin`などにPATHを通して、`./oc`や`./oc.exe`ではなく`oc`コマンドが実行できること
 - [ラーニングポータルサイト](https://learn.openshift.com/)の下記コースで紹介しているOpenShiftの基礎知識を習得していること<br>
-(コース受講にアカウント作成は不要です)
+(無料でコースを受講できます。アカウント作成も不要です。)
   - [Foundations of OpenShift](https://learn.openshift.com/introduction/)
   - [Subsystems, Components, and Internals](https://learn.openshift.com/subsystems/)
 - Google Chrome を利用できること (オプション)
