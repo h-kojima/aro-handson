@@ -101,7 +101,7 @@ RHAMTもRed Hat Developerで提供しています。利用するには、下記�
 
 https://developers.redhat.com/products/rhamt/download
 
-RHAMTを簡単に試してみたい場合は、上記から`Web Console`版をダウンロードして、ローカルかOpenShift上のコンテナアプリケーションとして実行します。ただし、OpenShift上にデプロイする場合は、デプロイスクリプトの実行プラットフォームがLinuxとmacOSのみ対応となっており、Windowsでは実行できませんのでご注意ください。ローカルで実行するときは、下記のガイドに沿ってください。
+RHAMTを簡単に試してみたい場合は、上記から`Web Console`版をダウンロードして、ローカルマシンかOpenShift上のコンテナアプリケーションとして実行します。ただし、OpenShift上にデプロイする場合は、デプロイスクリプトの実行プラットフォームがLinuxとmacOSのみ対応となっており、Windowsでは実行できませんのでご注意ください。ローカルマシンで実行するときは、下記のガイドに沿ってください。
 
 https://access.redhat.com/documentation/en-us/red_hat_application_migration_toolkit/4.3/html-single/web_console_guide/index#zip_install
 
