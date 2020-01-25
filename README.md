@@ -42,7 +42,7 @@ https://developers.redhat.com/products/codeready-workspaces/download
 
 ```
 $ oc login https://<URL_of_ARO> --token=<token_of_your_ARO>
-Logged into "https://openshift.3cb3039dbab44a0298fa.southeastasia.azmosa.io:443" as "arouser00@azure.opentlc.com" using the token provided.
+Logged into "https://openshift.XXXX.southeastasia.azmosa.io:443" as "arouserXXXX@azure.com" using the token provided.
 
 You don't have any projects. You can try to create a new project, by running
 
