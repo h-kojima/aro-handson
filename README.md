@@ -63,8 +63,6 @@ $ ./deploy.sh --deploy \
   -p=<YOUR_CODEREADY_PROJECT_NAME>
 ```
 
-## ハンズオン実施
-
 CodeReady Workspacesのデプロイが完了したら、`username: admin, password: admin`でログインします。AROのWebコンソールの`http://codeready-XXXX.apps.YYYY.eastus.azmosa.io`からログインします。
 
 <img src="https://github.com/h-kojima/aro-handson/blob/master/images/aro-overview.png" width="100%" height="100%">
@@ -82,6 +80,10 @@ https://github.com/h-kojima/aro-handson/blob/master/workspace-config.json
 5~10分程待つと、Workspaceが作成されて下記のような画面が表示されます。
 
 <img src="https://github.com/h-kojima/openshift/blob/master/arohandson/images/workspaces-init.png" width="100%" height="100%">
+
+これでハンズオンの前準備は完了です。
+
+## ハンズオン実施
 
 GitHubからプロジェクトをインポートして開発を進めます。`Import Project...`をクリックして、次の項目を指定して`Import`をクリックします。
 
