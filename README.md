@@ -2,7 +2,7 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [ARO v3ハンズオン](#aro-v3%E3%83%8F%E3%83%B3%E3%82%BA%E3%82%AA%E3%83%B3)
+- [ARO v3 Javaアプリ開発者向けハンズオン](#aro-v3-java%E3%82%A2%E3%83%97%E3%83%AA%E9%96%8B%E7%99%BA%E8%80%85%E5%90%91%E3%81%91%E3%83%8F%E3%83%B3%E3%82%BA%E3%82%AA%E3%83%B3)
   - [前提条件](#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6)
     - [Red Hat CodeReady WorkspacesのAROへのデプロイ](#red-hat-codeready-workspaces%E3%81%AEaro%E3%81%B8%E3%81%AE%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4)
   - [ハンズオン実施](#%E3%83%8F%E3%83%B3%E3%82%BA%E3%82%AA%E3%83%B3%E5%AE%9F%E6%96%BD)
@@ -10,7 +10,7 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# ARO v3ハンズオン
+# ARO v3 Javaアプリ開発者向けハンズオン
 
 このコンテンツは、Red Hatが提供している[OpenShiftのハンズオンコンテンツの一部](https://github.com/RedHat-Middleware-Workshops/cloud-native-workshop-v2m1-guides)をベースにしています。他にも[様々なコンテンツ](https://github.com/RedHat-Middleware-Workshops)を提供していますので、興味がありましたらご参照ください。
 
