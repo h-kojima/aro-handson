@@ -21,7 +21,7 @@
 - Google Chrome を利用できること
   - ハンズオンコンテンツは英語ですが、Google Chromeの右クリックメニューの`日本語に翻訳`から日本語化可能
   - バージョン`79.0.3945.130`で動作確認をしていますが、他のWebブラウザでも実行可能
-- [ラーニングポータルサイト](https://learn.openshift.com/)で下記コースで紹介しているOpenShiftの基礎知識を習得していること
+- [ラーニングポータルサイト](https://learn.openshift.com/)の下記コースで紹介しているOpenShiftの基礎知識を習得していること
   - [Foundations of OpenShift](https://learn.openshift.com/introduction/)
   - [Subsystems, Components, and Internals](https://learn.openshift.com/subsystems/)
 - ARO環境にログインできること
