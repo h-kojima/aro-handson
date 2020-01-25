@@ -54,7 +54,6 @@ $
 ダウンロード後にインストーラを解凍して下記を実行します。このコマンドで、ARO上に`<YOUR_CODEREADY_PROJECT_NAME>`プロジェクトが自動的に作成され、その中にRed Hat CodeReady Workspacesのコンテナアプリがデプロイされます。なおプロジェクト名は、アカウント名を先頭や末尾につけるなどして、一意になるようにしてください。
 
 ```
-$ oc login https://<URL_of_ARO> --token=<token_of_your_ARO>
 $ tar xvf codeready-workspaces-1.0.2.GA-operator-installer.tar.gz
 $ cd codeready-workspaces-operator-installer
 $ ./deploy.sh --deploy \
