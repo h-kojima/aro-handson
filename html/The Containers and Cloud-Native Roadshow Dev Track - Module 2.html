@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  
+
+  <link rel="stylesheet" media="all" href="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/application-dcf5640dabe7c086c5db76b2e378b4def3309902bc32af61ab63094a23e1730b.css" data-turbolinks-track="reload">
+  <script src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/application-1763c4134299cf1911a383dd8d9b23b574b429196c500fbba1a010629fc4c558.js" data-turbolinks-track="reload"></script><style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+<title>
+      The Containers and Cloud-Native Roadshow Dev Track - Module 2
+  </title><meta name="csrf-param" content="authenticity_token"><meta name="csrf-token" content="E/lyi8mErEq3r5i3XSkUUA1YMMDH8s29LCbOnKNkR0sB9JI1fWgAgm9bymzC/hmgarW0h5mUIKaMd0+cXoU6Eg=="></head>
+
+<body>
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid d-flex justify-content-start">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+      <a class="navbar-brand mb-0 h1" href="http://guides-m2-labs-infra.apps.cluster-XXXXXX.open.redhat.com/workshop/cloudnative" id="workshopName">The Containers and Cloud-Native Roadshow Dev Track - Module 2</a>
+  </div>
+</nav>
+
+<script type="application/javascript">
+    if (App.hasOwnProperty('subscription_id')) {
+        App.cable.subscriptions.remove(App.subscription_id);
+    }
+
+    App.subscription_id = App.report_page_view('cloudnative#complete', '14629194-44bc-4de0-acbe-cf3ddbd3ad4e');
+</script>
+
+<main class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+        <h2>Your Workshop Environment</h2>
+        <h2 id="the-workshop-environment-you-are-using">The Workshop Environment You Are Using</h2>
+
+<p>Your workshop environment consists of several components which have been pre-installed and are ready to use. Depending on which parts of the workshop you’re doing, you will use one or more of:</p>
+
+<ul>
+  <li><a href="https://www.openshift.com/" target="_blank">Red Hat OpenShift</a> - You’ll use one or more <em>projects</em> (Kubernetes namespaces) that are your own and are isolated from other workshop students</li>
+  <li><a href="https://developers.redhat.com/products/codeready-workspaces/overview" target="_blank">Red Hat CodeReady Workspaces</a> - based on <strong>Eclipse Che</strong>, it’s a cloud-based, in-browser IDE (similar to IntelliJ IDEA, VSCode, Eclipse IDE). You’ve been provisioned your own personal workspace for use with this workshop. You’ll write, test, and deploy code from here.</li>
+  <li><a href="https://developers.redhat.com/products/rhamt" target="_blank">Red Hat Application Migration Toolkit</a> - You’ll use this to migrate an existing application</li>
+  <li><a href="https://www.redhat.com/en/products/runtimes" target="_blank">Red Hat Runtimes</a> - a collection of cloud-native runtimes like Spring Boot, Node.js, and <a href="https://quarkus.io/" target="_blank">Quarkus</a></li>
+  <li><a href="https://www.redhat.com/en/technologies/jboss-middleware/amq" target="_blank">Red Hat AMQ Streams</a> - streaming data platform based on <strong>Apache Kafka</strong></li>
+  <li><a href="https://access.redhat.com/products/red-hat-single-sign-on" target="_blank">Red Hat SSO</a> - For authentication / authorization - based on <strong>Keycloak</strong></li>
+  <li>Other open source projects like <a href="https://gogs.io/" target="_blank">Gogs</a> (Git server that holds application source code), <a href="https://knative.dev/" target="_blank">Knative</a> (for serverless apps), <a href="https://jenkins.io/" target="_blank">Jenkins</a> and <a href="https://cloud.google.com/tekton/" target="_blank">Tekton</a> (CI/CD pipelines), <a href="https://prometheus.io/" target="_blank">Prometheus</a> and <a href="https://grafana.com/" target="_blank">Grafana</a> (monitoring apps), and more.</li>
+</ul>
+
+<p>You’ll be provided clickable URLs throughout the workshop to access the services that have been installed for you.</p>
+
+<h2 id="how-to-complete-this-workshop">How to complete this workshop</h2>
+
+<p>Simply follow these instructions end-to-end. <strong>You’ll need to do quite a bit of copy/paste for Linux commands and source code modifications</strong>, as well as clicking around on various consoles used in the labs. When you get to the end of each section, you can click the “Next &gt;” button at the bottom to advance to the next topic. You can also use the menu on the left to move around the instructions at will.</p>
+
+<p>The entire workshop is split into one or more <em>modules</em> - Look at the top of the screen in the header to see which module you are on. After you complete this module, your instructor may have additional modules to complete.</p>
+
+<p>Good luck, and let’s get started!</p>
+
+        <hr>
+        <h2>Advanced Cloud-Native Services</h2>
+        <h2 id="advanced-cloud-native-services">Advanced Cloud-Native Services</h2>
+
+<p>If you complete the <strong>Cloud Native Workshop - Module 1</strong>, you learned how to take an existing application to the cloud with JBoss EAP and OpenShift,
+and you got a glimpse into the power of OpenShift for existing applications.</p>
+
+<p>In this lab, you will go deeper into how to use the OpenShift Container Platform as a developer to build and deploy applications. We’ll focus on the core features of OpenShift as it relates to developers, and you’ll learn typical workflows for a developer (develop, build, test, deploy, and repeat).</p>
+
+<h4 id="lets-get-started">Let’s get started</h4>
+
+<hr>
+
+<p>If you are not familiar with the OpenShift Container Platform, it’s worth taking a few minutes to understand the basics of the platform as well as the environment that you will be using for this workshop.</p>
+
+<p>The goal of OpenShift is to provide a great experience for both Developers and System Administrators to develop, deploy, and run containerized applications.  Developers should love using OpenShift because it enables them to take advantage of both containerized applications and orchestration without having the know the details.  Developers are free to focus on their code instead of spending time writing Dockerfiles and running docker builds.</p>
+
+<p>Both Developers and Operators communicate with the OpenShift Platform via one of the following methods:</p>
+
+<ul>
+  <li><strong>Command Line Interface</strong> - The command line tool that we will be using as part of this training is called the <em>oc</em> tool. You used this briefly in the last lab. This tool is written in the Go programming language and is a single executable that is provided for Windows, OS X, and the Linux Operating Systems.</li>
+  <li><strong>Web Console</strong> -  OpenShift also provides a feature rich Web Console that provides a friendly graphical interface for interacting with the platform. You can always access the Web Console using the link provided just above the Terminal window on the right:</li>
+  <li><strong>REST API</strong> - Both the command line tool and the web console actually communicate to OpenShift via the same method, the REST API.  Having a robust API allows users to create their own scripts and automation depending on their specific requirements.  For detailed information about the REST API, check out the <a href="https://docs.openshift.org/latest/rest_api/index.html" target="_blank">official documentation</a>. You will not use the REST API directly in this workshop.</li>
+</ul>
+
+<p>During this workshop, you will be using both the command line tool and the web console.  However, it should be noted that there are plugins for several integrated development environments as well. For example, to use OpenShift from the Eclipse IDE, you would want to use the official <a href="https://tools.jboss.org/features/openshift.html" target="_blank">JBoss Tools</a> plugin.</p>
+
+<p>Now that you know how to interact with OpenShift, let’s focus on some core concepts that you as a developer will need to understand as you are building your applications!</p>
+
+<h4 id="developer-concepts">Developer Concepts</h4>
+
+<hr>
+
+<p>There are several concepts in OpenShift useful for developers, and in this workshop you should be familiar with them.</p>
+
+<h5 id="projects">Projects</h5>
+
+<p><a href="https://docs.openshift.com/container-platform/latest/architecture/core_concepts/projects_and_users.html#projects">Projects</a> are a top level concept to help you organize your deployments. An OpenShift project allows a community of users (or a user) to organize and manage their content in isolation from other communities. Each project has its own resources, policies (who can or cannot perform actions), and constraints (quotas and limits on resources, etc). Projects act as a wrapper around all the
+application services and endpoints you (or your teams) are using for your work.</p>
+
+<h5 id="containers">Containers</h5>
+
+<p>The basic units of OpenShift applications are called containers (sometimes called Linux Containers). <a href="https://access.redhat.com/articles/1353593" target="_blank">Linux container technologies</a> are lightweight mechanisms for isolating running processes so that they are limited to interacting with only their designated resources.</p>
+
+<p>Though you do not directly interact with the Docker CLI or service when using OpenShift Container Platform, understanding their capabilities and terminology is important for understanding their role in OpenShift Container Platform and how your applications function inside of containers.</p>
+
+<h5 id="pods">Pods</h5>
+
+<p>OpenShift Container Platform leverages the Kubernetes concept of a pod, which is one or more containers deployed together on one host, and the smallest compute unit that can be defined, deployed, and managed.</p>
+
+<p>Pods are the rough equivalent of a machine instance (physical or virtual) to a container. Each pod is allocated its own internal IP address, therefore owning its entire port space, and containers within pods can share their local storage and networking.</p>
+
+<h5 id="images">Images</h5>
+
+<p>Containers in OpenShift are based on Docker-formatted container images. An image is a binary that includes all of the requirements for running a single container,
+as well as metadata describing its needs and capabilities.</p>
+
+<p>You can think of it as a packaging technology. Containers only have access to resources defined in the image unless you give the container additional access when creating it. By deploying the same image in multiple containers across multiple hosts and load balancing between them, OpenShift Container Platform can provide redundancy and horizontal scaling for a service packaged into an image.</p>
+
+<h5 id="image-streams">Image Streams</h5>
+
+<p>An image stream and its associated tags provide an abstraction for referencing Images from within OpenShift. The image stream and its tags allow you to see what images are available and ensure that you are using the specific image you need even if the image in the repository changes.</p>
+
+<h5 id="builds">Builds</h5>
+
+<p>A build is the process of transforming input parameters into a resulting object. Most often, the process is used to transform input parameters or source code into a runnable image. A <em>BuildConfig</em> object is the definition of the entire build process. It can build from different sources, including a Dockerfile, a source code repository like Git, or a Jenkins Pipeline definition.</p>
+
+<h5 id="pipelines">Pipelines</h5>
+
+<p>Pipelines allow developers to define a <em>Jenkins</em> pipeline for execution by the Jenkins pipeline plugin. The build can be started, monitored, and managed by OpenShift Container Platform in the same way as any other build type.</p>
+
+<p>Pipeline workflows are defined in a Jenkinsfile, either embedded directly in the build configuration, or supplied in a Git repository and referenced by the build configuration.</p>
+
+<h5 id="deployments">Deployments</h5>
+
+<p>An OpenShift Deployment describes how images are deployed to pods, and how the pods are deployed to the underlying container runtime platform. OpenShift deployments also provide the ability to transition from an existing deployment of an image to a new one and also define hooks to be run before or after creating the replication controller.</p>
+
+<h5 id="services">Services</h5>
+
+<p>A Kubernetes service serves as an internal load balancer. It identifies a set of replicated pods in order to proxy the connections it receives to them. Backing pods can be added to or removed from a service arbitrarily while the service remains consistently available, enabling anything that depends on the service to refer to it at a consistent address.</p>
+
+<h5 id="routes">Routes</h5>
+
+<p><em>Services</em> provide internal abstraction and load balancing within an OpenShift environment, sometimes clients (users, systems, devices, etc.) <strong>outside</strong> of OpenShift need to access an application. The way that external clients are able to access applications running in OpenShift is through the OpenShift routing layer. And the data object behind that is a <em>Route</em>.</p>
+
+<p>The default OpenShift router (HAProxy) uses the HTTP header of the incoming request to determine where to proxy the connection. You can optionally define security, such as TLS, for the <em>Route</em>. If you want your <em>Services</em>, and, by extension, your <em>Pods</em>,  to be accessible to the outside world, you need to create a <em>Route</em>.</p>
+
+<h5 id="templates">Templates</h5>
+
+<p>Templates contain a collection of object definitions (BuildConfigs, DeploymentConfigs, Services, Routes, etc) that compose an entire working project. They are useful for packaging up an entire collection of runtime objects into a somewhat portable representation of a running application, including the configuration of the elements.</p>
+
+<p>You will use several pre-defined templates to initialize different environments for the application. You’ve already used one in the previous lab to deploy the application
+into a <em>dev</em> environment, and you’ll use more in this lab to provision the <em>production</em> environment as well.</p>
+
+<p>Consult the <a href="https://docs.openshift.com/" target="_blank">OpenShift documentation</a> for more details on these and other concepts.</p>
+
+<h4 id="getting-ready-for-the-labs">Getting Ready for the labs</h4>
+
+<blockquote>
+  <p><strong>NOTE</strong></p>
+
+  <p>If you’ve already completed the <strong>Optimizing Existing Applications</strong> module then you will simply need to import the code for this module. Skip down to the <strong>Import Projects</strong> section.</p>
+</blockquote>
+
+<hr>
+
+<h5 id="if-this-is-the-first-module-you-are-doing-today">If this is the first module you are doing today</h5>
+
+<p>You will be using Red Hat CodeReady Workspaces, an online IDE based on <a href="https://www.eclipse.org/che/" target="_blank">Eclipe Che</a>. <strong>Changes to files are auto-saved every few seconds</strong>, so you don’t need to explicitly save changes.</p>
+
+<p>To get started, <a href="http://codeready-labs-infra.apps.cluster-XXXXXX.open.redhat.com/" target="_blank">access the Che instance</a> and log in using the username and password you’ve been assigned (e.g. <code>userXX/YYYYYY</code>):</p>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/che-login.png" alt="cdw"></p>
+
+<p>Once you log in, you’ll be placed on your personal dashboard. We’ve pre-created workspaces for you to use. Click on the name of the pre-created workspace on the left, as shown below (the name will be different depending on your assigned number). You can also click on the name of the workspace in the center, and then click on the green button that says “OPEN” on the top right hand side of the screen:</p>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/che-precreated.png" alt="cdw"></p>
+
+<p>After a minute or two, you’ll be placed in the workspace:</p>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/che-workspace.png" alt="cdw"></p>
+
+<p>To gain extra screen space, click on the yellow arrow to hide the left menu (you won’t need it):</p>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/che-realestate.png" alt="cdw"></p>
+
+<p>Users of Eclipse, IntelliJ IDEA or Visual Studio Code will see a familiar layout: a project/file browser on the left, a code editor on the right, and a terminal at the bottom. You’ll use all of these during the course of this workshop, so keep this browser tab open throughout. <strong>If things get weird, you can simply reload the browser tab to refresh the view.</strong></p>
+
+<h5 id="import-projects">Import Projects</h5>
+
+<p>Click on the <strong>Import Projects…</strong> in <strong>Workspace</strong> menu and enter the following:</p>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/codeready-workspace-menu.png" alt="codeready-workspace-import"></p>
+
+<blockquote>
+  <p>NOTE: If you’ve completed other modules already, then you can use <em>Workspace &gt; Import Project</em> menu to import the project.</p>
+</blockquote>
+
+<ul>
+  <li>Version Control System: <code>GIT</code></li>
+  <li>URL: <code>http://gogs-labs-infra.apps.cluster-XXXXXX.open.redhat.com/userXX/cloud-native-workshop-v2m2-labs.git</code>(IMPORTANT: replace userXX with your lab user)</li>
+  <li>Check <code>Import recursively (for multi-module projects)</code></li>
+  <li>Name: <code>cloud-native-workshop-v2m2-labs</code></li>
+</ul>
+
+<p><strong>Tip</strong>: You can find GIT URL when you click on <a href="http://gogs-labs-infra.apps.cluster-XXXXXX.open.redhat.com/" target="_blank">GIT URL</a> then login with your credentials.</p>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/codeready-workspace-import.png" alt="codeready-workspace-import" width="700px"></p>
+
+<p>The projects are imported now into your workspace and is visible in the project explorer.</p>
+
+<p>CodeReady Workspaces is a full featured IDE and provides language specific capabilities for various project types. In order to
+enable these capabilities, let’s convert the imported project skeletons to a Maven projects. In the project explorer, right-click on each project (<code>monolith</code>, <code>inventory</code> and <code>catalog</code>) and
+then click on <code>Convert to Project</code> continuously.</p>
+
+<blockquote>
+  <p><strong>NOTE</strong></p>
+
+  <p>If you do not see the <code>Convert to Project</code> then your projects are already converted, and you should see a small icon next to each project:
+<img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/maven-icon.png" alt="codeready-workspace-convert" width="600px"></p>
+</blockquote>
+
+<p>If not, then convert them:</p>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/codeready-workspace-convert.png" alt="codeready-workspace-convert" width="500px"></p>
+
+<p>Choose <code>Maven</code> from the project configurations and then click on <code>Save</code>.</p>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/codeready-workspace-maven.png" alt="codeready-workspace-maven" width="700px"></p>
+
+<p>Repeat the above for all 3 projects (<code>monolith</code>, <code>inventory</code> and <code>catalog</code> projects.)</p>
+
+<blockquote>
+  <p><code>NOTE</code>: For the rest of these labs, anytime you need to run a command in a terminal, you can use the CodeReady Workspaces Terminal window.</p>
+</blockquote>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/codeready-workspace-terminal.png" alt="codeready-workspace-terminal"></p>
+
+<h4 id="login-to-openshift-cli">Login to OpenShift CLI</h4>
+
+<p>Although your Eclipse Che workspace is running on the Kubernetes cluster, it’s running with a default restricted <em>Service Account</em> that prevents you from creating most resource types. If you’ve completed other modules, you’re probably already logged in, but let’s login again: open a Terminal and issue the following command:</p>
+
+<p><code>oc login https://$KUBERNETES_SERVICE_HOST:$KUBERNETES_SERVICE_PORT --insecure-skip-tls-verify=true</code></p>
+
+<p>Enter your username and password assigned to you:</p>
+
+<ul>
+  <li>Username: <code>userXX</code></li>
+  <li>Password: <code>YYYYYY</code></li>
+</ul>
+
+<p>You should see like:</p>
+
+<pre><code class="language-shell">Login successful.
+
+You have access to the following projects and can switch between them with 'oc project &lt;projectname&gt;':
+
+  * default
+    istio-system
+    user0-bookinfo
+    user0-catalog
+    user0-cloudnative-pipeline
+    user0-cloudnativeapps
+    user0-inventory
+
+Using project "default".
+Welcome! See 'oc help' to get started.
+</code></pre>
+
+<h5 id="if-this-is-the-first-module-you-are-doing-today-1">If this is the first module you are doing today</h5>
+
+<p>If you’ve already completed Module 1 (Optimizing Existing Applications), then you will already have the <em>CoolStore</em> app deployed.</p>
+
+<p><strong>If this is the first module you are completing today, you need to deploy CoolStore monolith application by running this command in a CodeReady Workspaces Terminal:</strong></p>
+
+<p><code>sh /projects/cloud-native-workshop-v2m2-labs/monolith/scripts/deploy-inventory.sh userXX</code></p>
+
+<p><code>sh /projects/cloud-native-workshop-v2m2-labs/monolith/scripts/deploy-catalog.sh userXX</code></p>
+
+<p><code>sh /projects/cloud-native-workshop-v2m2-labs/monolith/scripts/deploy-coolstore.sh userXX</code></p>
+
+<blockquote>
+  <p>NOTE: Replace <code>userXX</code> with your actual username!</p>
+</blockquote>
+
+<p>Wait for the commands to complete. If you see any errors, contact an instructor!</p>
+
+<h4 id="verifying-the-dev-environment">Verifying the Dev Environment</h4>
+
+<hr>
+
+<p>In the previous module, you created a new OpenShift project called <strong>userXX-coolstore-dev</strong> which represents your developer personal project in which you deployed the CoolStore monolith.</p>
+
+<h5 id="verify-application">Verify Application</h5>
+
+<p>Let’s take a moment and review the OpenShift resources that are created for the Monolith:</p>
+
+<ul>
+  <li>Build Config: <strong>coolstore</strong> build config is the configuration for building the Monolith image from the source code or WAR file</li>
+  <li>Image Stream: <strong>coolstore</strong> image stream is the virtual view of all coolstore container images built and pushed to the OpenShift integrated registry.</li>
+  <li>Deployment Config: <strong>coolstore</strong> deployment config deploys and redeploys the Coolstore container image whenever a new coolstore container image becomes available. Similarly, the <strong>coolstore-postgresql</strong> does the same for the database.</li>
+  <li>Service: <strong>coolstore</strong> and <strong>coolstore-postgresql</strong> service is an internal load balancer which identifies a set of pods (containers) in order to proxy the connections it receives to them. Backing pods can be added to or removed from a service arbitrarily while the service remains consistently available, enabling anything that depends on the service to refer to it at a consistent address (service name or IP).</li>
+  <li>Route: <strong>www</strong> route registers the service on the built-in external load-balancer and assigns a public DNS name to it so that it can be reached from outside OpenShift cluster.</li>
+</ul>
+
+<p>You can review the above resources in the <a href="https://console-openshift-console.apps.cluster-XXXXXX.open.redhat.com/" target="_blank">OpenShift web console</a> or using the <em>oc get</em> or <em>oc describe</em> commands (oc describe gives more detailed info):</p>
+
+<blockquote>
+  <p>You can use short synonyms for long words, like <strong>bc</strong> instead of <strong>buildconfig</strong>, <strong>is</strong> for <strong>imagestream</strong>, <strong>dc</strong> for <strong>deploymentconfig</strong>, <strong>svc</strong> for <strong>service</strong>, etc.</p>
+</blockquote>
+
+<blockquote>
+  <p>NOTE: Don’t worry about reading and understanding the output of oc describe. Just make sure the command doesn’t report errors!</p>
+</blockquote>
+
+<p>Set the current project to <em>coolstore</em> and replace your username with <strong>userXX</strong>:</p>
+
+<p><code>oc project userXX-coolstore-dev</code></p>
+
+<p>Run these commands to inspect the elements via CodeReady Workspaces Terminal window:</p>
+
+<p><code>oc get bc coolstore</code></p>
+
+<p><code>oc get is coolstore</code></p>
+
+<p><code>oc get dc coolstore</code></p>
+
+<p><code>oc get svc coolstore</code></p>
+
+<p><code>oc describe route www</code></p>
+
+<p>Verify that you can access the monolith by clicking on the exposed OpenShift route to open up the sample application in a separate browser tab.</p>
+
+<p>You should also be able to see both the CoolStore monolith and its database running in separate pods via CodeReady Workspaces Terminal window:</p>
+
+<p><code>oc get pods -l application=coolstore</code></p>
+
+<p>The output should look like this:</p>
+
+<pre><code class="language-shell">NAME                           READY     STATUS    RESTARTS   AGE
+coolstore-2-bpkkc              1/1       Running   0          4m
+coolstore-postgresql-1-jpcb8   1/1       Running   0          9m
+</code></pre>
+
+<h4 id="verify-database">Verify Database</h4>
+
+<hr>
+
+<p>You can log into the running Postgres container using the following via CodeReady Workspaces Terminal window:</p>
+
+<p><code>oc  rsh dc/coolstore-postgresql</code></p>
+
+<p>Once logged in, use the following command to execute an SQL statement to show some content from the database:</p>
+
+<p><code>psql -U $POSTGRESQL_USER $POSTGRESQL_DATABASE -c 'select name from PRODUCT_CATALOG;'</code></p>
+
+<p>You should see the following:</p>
+
+<pre><code>          name
+------------------------
+ Red Fedora
+ Forge Laptop Sticker
+ Solid Performance Polo
+ Ogio Caliber Polo
+ 16 oz. Vortex Tumbler
+ Atari 2600 Joystick
+ Pebble Smart Watch
+ Oculus Rift
+ Lytro Camera
+(9 rows)
+</code></pre>
+
+<p>Don’t forget to exit the pod’s shell with <strong>exit</strong>.</p>
+
+<p>With our running project on OpenShift, in the next step we’ll explore how you as a developer can work with the running app to make changes and debug the application!</p>
+
+        <hr>
+        <h2>Implementing Continuous Delivery</h2>
+        <h2 id="lab1---automating-deployments-using-pipelines">Lab1 - Automating Deployments Using Pipelines</h2>
+
+<p>In the previous scenarios, you deployed the Coolstore monolith using an OpenShift Template into the <strong>userXX-coolstore-dev</strong> Project. The template created the necessary objects (BuildConfig, DeploymentConfig, ImageStreams, Services, and Routes) and gave you as a Developer a “playground” in which to run the app, make changes and debug.</p>
+
+<p>In this step, we are now going to setup a separate production environment and explore some best practices and techniques for developers and DevOps teams for getting code from the developer <strong>(that’s YOU!)</strong> to production with less downtime and greater consistency.</p>
+
+<h4 id="production-vs-development">Production vs. Development</h4>
+
+<hr>
+
+<p>The existing <strong>userXX-coolstore-dev</strong> project is used as a developer environment for building new versions of the app after code changes and deploying them to the development environment.</p>
+
+<p>In a real project on OpenShift, <em>dev</em>, <em>test</em> and <em>production</em> environments would typically use different OpenShift projects and perhaps even different OpenShift clusters.</p>
+
+<p>For simplicity in this scenario we will only use a <em>dev</em> and <em>prod</em> environment, and no test/QA environment.</p>
+
+<h4 id="create-the-production-environment">1. Create the production environment</h4>
+
+<hr>
+
+<p>First, open a new brower with the <a href="https://console-openshift-console.apps.cluster-XXXXXX.open.redhat.com/" target="_blank">OpenShift web console</a></p>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/openshift_login.png" alt="openshift_login"></p>
+
+<p>Login using:</p>
+
+<ul>
+  <li>Username: <code>userXX</code></li>
+  <li>Password: <code>YYYYYY</code></li>
+</ul>
+
+<blockquote>
+  <p><strong>NOTE</strong>: Use of self-signed certificates</p>
+
+  <p>When you access the OpenShift web console](https://console-openshift-console.apps.cluster-XXXXXX.open.redhat.com) or other URLs via <em>HTTPS</em> protocol, you will see browser warnings
+like <code>Your &gt; Connection is not secure</code> since this workshop uses self-signed certificates (which you should not do in production!).
+For example, if you’re using <strong>Chrome</strong>, you will see the following screen.</p>
+
+  <p>Click on <code>Advanced</code> then, you can access the HTTPS page when you click on <code>Proceed to...</code>!!!</p>
+
+  <p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/browser_warning.png" alt="warning"></p>
+
+  <p>Other browsers have similar procedures to accept the security exception.</p>
+</blockquote>
+
+<p>You will see the OpenShift landing page:</p>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/openshift_landing.png" alt="openshift_landing"></p>
+
+<blockquote>
+  <p>The project displayed in the landing page depends on which labs you will run today. If you will develop <code>Service Mesh and Identity</code> then you will see pre-created projects as the above screeenshot.</p>
+</blockquote>
+
+<p>Click <code>Create Project</code>, fill in the fields, and click <code>Create</code>:</p>
+
+<ul>
+  <li>Name: <strong>userXX-coolstore-prod</strong></li>
+  <li>Display Name: <strong>USERXX Coolstore Monolith - Production</strong></li>
+  <li>Description: <em>leave this field empty</em></li>
+</ul>
+
+<blockquote>
+  <p>NOTE: YOU <code>MUST</code> USE <code>userXX-coolstore-prod</code> AS THE PROJECT NAME, as this name is referenced later on and you will experience failures if you do not name it <code>userXX-coolstore-prod</code>.</p>
+</blockquote>
+
+<p>This will create a new OpenShift project called <strong>userXX-coolstore-prod</strong> from which our production application will run.</p>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/create_prod_dialog.png" alt="create_dialog" width="700px"></p>
+
+<h4 id="add-the-production-elements">2. Add the production elements</h4>
+
+<hr>
+
+<p>In this case we’ll use the production template to create the objects. Execute via CodeReady Workspaces Terminal window:</p>
+
+<p><code>oc project userXX-coolstore-prod</code></p>
+
+<p>And finally deploy template:</p>
+
+<p><code>oc new-app --template=coolstore-monolith-pipeline-build</code></p>
+
+<p>We have to deploy a <strong>Jenkins Server</strong> in the namespace because OpenShift 4 doesn’t deploy a Jenkins server automatically when we use <em>Jenkins Pipeline</em> build strategy.</p>
+
+<p><code>oc new-app --template=jenkins-ephemeral -l app=jenkins -p JENKINS_SERVICE_NAME=jenkins -p DISABLE_ADMINISTRATIVE_MONITORS=true</code></p>
+
+<p><code>oc set resources dc/jenkins --limits=cpu=1,memory=2Gi --requests=cpu=1,memory=512Mi</code></p>
+
+<p>This will use an OpenShift Template called <strong>coolstore-monolith-pipeline-build</strong> to construct the production application.
+As you probably guessed it will also include a Jenkins Pipeline to control the production application (more on this later!)</p>
+
+<p>Navigate to the Web Console to see your new app and the components using this link:</p>
+
+<ul>
+  <li>Coolstore Prod Project Status at <a href="https://console-openshift-console.apps.cluster-XXXXXX.open.redhat.com/" target="_blank">OpenShift web console</a>:</li>
+</ul>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/coolstore-prod-overview.png" alt="Prod"></p>
+
+<p>You can see the production database, and an application called <em>Jenkins</em> which OpenShift uses to manage CI/CD pipeline deployments. There is no running production
+app just yet. The only running app is back in the <em>dev</em> environment, where you used a binary build to run the app previously.</p>
+
+<p>In the next step, we’ll <em>promote</em> the app from the <em>dev</em> environment to the <em>production</em> environment using an OpenShift pipeline build. Let’s get going!</p>
+
+<h4 id="promoting-apps-across-environments-with-pipelines">Promoting Apps Across Environments with Pipelines</h4>
+
+<hr>
+
+<h5 id="continuous-delivery">Continuous Delivery</h5>
+
+<p>So far you have built and deployed the app manually to OpenShift in the <em>dev</em> environment. Although it’s convenient for local development, it’s an error-prone way of delivering software when extended to test and production environments.</p>
+
+<p>Continuous Delivery (CD) refers to a set of practices with the intention of automating various aspects of delivery software. One of these practices is called delivery pipeline which is an automated process to define the steps a change in code or configuration has to go through in order to reach upper environments and eventually to production.</p>
+
+<p>OpenShift simplifies building CI/CD Pipelines by integrating the popular <a href="https://jenkins.io/doc/book/pipeline/overview/" target="_blank">Jenkins pipelines</a> into the platform and enables defining truly complex workflows directly from within OpenShift.</p>
+
+<p>The first step for any deployment pipeline is to store all code and configurations in a source code repository. In this workshop, the source code and configurations are stored in a <a href="https://github.com/RedHat-Middleware-Workshops/cloud-native-workshop-v2m2-labs" target="_blank">GitHub repository</a> we’ve been using. This repository has been copied locally to your environment and you’ve been using it ever since!</p>
+
+<h5 id="pipelines">Pipelines</h5>
+
+<p>OpenShift has built-in support for CI/CD pipelines by allowing developers to define a <a href="https://jenkins.io/solutions/pipeline/" target="_blank">Jenkins pipeline</a> for execution by a Jenkins
+automation engine, which is automatically provisioned on-demand by OpenShift when needed.</p>
+
+<p>The build can get started, monitored, and managed by OpenShift in the same way as any other build types e.g. S2I. Pipeline workflows are defined in a Jenkinsfile, either embedded directly in the build configuration, or supplied in \a Git repository and referenced by the build configuration. They are written using the
+<a href="http://groovy-lang.org/">Groovy scripting language</a>.</p>
+
+<p>As part of the production environment template you used in the last step, a Pipeline build object was created. Ordinarily the pipeline would contain steps to build the project in the <em>dev</em> environment, store the resulting image in the local repository, run the image and execute tests against it, then wait for human approval to <em>promote</em> the resulting image to other environments like test or production.</p>
+
+<h4 id="inspect-the-pipeline-definition">3. Inspect the Pipeline Definition</h4>
+
+<hr>
+
+<p>Our pipeline is somewhat simplified for the purposes of this Workshop. Inspect the contents of the pipeline by navigating <em>Builds &gt; Build Configs</em> and click on <code>monolith-pipeline</code> in the <a href="https://console-openshift-console.apps.cluster-XXXXXX.open.redhat.com/" target="_blank">OpenShift web console</a>. Then, you will see the details of <em>Jenkinsfile</em> on the right side:</p>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/coolstore-prod-monolith-bc.png" alt="monolith-pipeline"></p>
+
+<p>You can also inspect this via the following command via CodeReady Workspaces Terminal window:</p>
+
+<p><code>oc describe bc/monolith-pipeline</code></p>
+
+<p>You can see the Jenkinsfile definition of the pipeline in the output:</p>
+
+<pre><code class="language-shell">Jenkinsfile contents:
+  pipeline {
+    agent {
+      label 'maven'
+    }
+    stages {
+      stage ('Build') {
+        steps {
+          sleep 5
+        }
+      }
+      stage ('Run Tests in DEV') {
+        steps {
+          sleep 10
+        }
+      }
+      stage ('Deploy to PROD') {
+        steps {
+          script {
+            openshift.withCluster() {
+              openshift.tag("userXX-coolstore-dev/coolstore:latest", "userXX-coolstore-prod/coolstore:prod")
+            }
+          }
+        }
+      }
+      stage ('Run Tests in PROD') {
+        steps {
+          sleep 30
+        }
+      }
+    }
+  }
+</code></pre>
+
+<blockquote>
+  <p>NOTE: You have to replace your username with <strong>userXX</strong> in Jenkinsfile via clicking on <strong>YAML</strong> tab. For example, if your username is user0, it will be user0-coolstore-dev and user0-coolstore-prod. Don’t forget to click on <strong>Save</strong>.</p>
+</blockquote>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/coolstore-prod-monolith-update-jenkins.png" alt="monolith-pipeline"></p>
+
+<p>The pipeline syntax allows creating complex deployment scenarios with the possibility of defining checkpoints for manual interaction and approval processes using
+<a href="https://jenkins.io/doc/pipeline/steps/">the large set of steps and plugins that Jenkins provides</a> in order to adapt the pipeline to the processes used in your team. You can see a few examples of advanced pipelines in the <a href="https://github.com/openshift/origin/tree/master/examples/jenkins/pipeline" target="_blank">OpenShift GitHub Repository</a>.</p>
+
+<p>To simplify the pipeline in this workshop, we simulate the build and tests and skip any need for human input. Once the pipeline completes, it deploys the app from the <em>dev</em> environment to our <em>production</em> environment using the above <code>tag()</code> method within the <code>openshift</code> object, which simply re-tags the image you already created using a tag which will trigger deployment in the production environment.</p>
+
+<h4 id="promote-the-dev-image-to-production-using-the-pipeline">4. Promote the dev image to production using the pipeline</h4>
+
+<hr>
+
+<p>Before promoting the dev image, you need to modify a <strong>RoleBinding</strong> to access the dev image by Jenkins. This allows the Jenkins service account in the <strong>userXX-coolstore-prod</strong> project to access the image within the <strong>userXX-coolstore-dev</strong> project.</p>
+
+<p>Go to overview page of the <code>userXX-coolstore-dev</code> project, then navigate to <em>Administration &gt; Role Bindings</em>. Click on <strong>ci_admin</strong>:</p>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/coolstore-dev-ci-admin.png" alt="Prod"></p>
+
+<p>Move to <strong>YAML</strong> tab and replace your username with <em>userXX</em> then click on <strong>Save</strong>:</p>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/coolstore-dev-ci-admin-save.png" alt="Prod"></p>
+
+<p>Let’s invoke the build pipeline by using <a href="https://console-openshift-console.apps.cluster-XXXXXX.open.redhat.com/" target="_blank">OpenShift web console</a>. Open the production project in the web console.</p>
+
+<p>Next, navigate to <em>Builds &gt; Build Configs &gt; monolith-pipeline</em>, click the small menu at the far right, and click <em>Start Build</em>:</p>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/pipe-start.png" alt="Prod"></p>
+
+<p>This will start the pipeline. <em>It will take a minute or two to start the pipeline!</em> Future runs will not take as much time as the Jenkins infrastructure will already be warmed up. You can watch the progress of the pipeline:</p>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/pipe-prog.png" alt="Prod"></p>
+
+<p>Once the pipeline completes, return to the Prod Project Status at <a href="https://console-openshift-console.apps.cluster-XXXXXX.open.redhat.com/" target="_blank">OpenShift web console</a> and notice that the application is now deployed and running!</p>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/pipe-done.png" alt="Prod"></p>
+
+<p>It may take a few moments for the container to deploy fully.</p>
+
+<h5 id="congratulations">Congratulations!</h5>
+
+<p>You have successfully setup a development and production environment for your project and can use this workflow for future projects as well.</p>
+
+<p>In the next step, we’ll add a human interaction element to the pipeline, so that you as a project lead can be in charge of approving changes.</p>
+
+<h5 id="more-reading">More Reading</h5>
+
+<ul>
+  <li><a href="https://docs.openshift.com/container-platform/4.1/builds/build-strategies.html#builds-strategy-pipeline-build_build-strategies" target="_blank">OpenShift Pipeline Documentation</a></li>
+</ul>
+
+<h4 id="adding-pipeline-approval-steps">Adding Pipeline Approval Steps</h4>
+
+<hr>
+
+<p>In previous steps, you used an OpenShift Pipeline to automate the process of building and deploying changes from the dev environment to production.</p>
+
+<p>In this step, we’ll add a final checkpoint to the pipeline which will require you as the project lead to approve the final push to production.</p>
+
+<h4 id="edit-the-pipeline">5. Edit the pipeline</h4>
+
+<hr>
+
+<p>Ordinarily your pipeline definition would be checked into a source code management system like Git, and to change the pipeline you’d edit the <em>Jenkinsfile</em> in the source base. For this workshop we’ll just edit it directly to add the necessary changes. You can edit it with the <strong>oc</strong> command but we’ll use the Web Console.</p>
+
+<p>Go back to <em>Builds &gt; Build Configs &gt; monolith-pipeline</em> then click on <em>Edit Build Config</em>.</p>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/pipe-edit.png" alt="Prod"></p>
+
+<p>Click on <strong>YAML</strong> tab and add <em>a new stage</em> to the pipeline, just before the <em>Deploy to PROD</em> stage:</p>
+
+<blockquote>
+  <p>NOTE: You will need to copy and paste the below code into the right place as shown in the below image.</p>
+</blockquote>
+
+<pre><code class="language-groovy">            stage ('Approve Go Live') {
+              steps {
+                timeout(time:30, unit:'MINUTES') {
+                  input message:'Go Live in Production (switch to new version)?'
+                }
+              }
+            }
+</code></pre>
+
+<p>Your final pipeline should look like:</p>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/pipe-edit2.png" alt="Prod"></p>
+
+<p>Click <strong>Save</strong>.</p>
+
+<h4 id="make-a-simple-change-to-the-app">6. Make a simple change to the app</h4>
+
+<hr>
+
+<p>With the approval step in place, let’s simulate a new change from a developer who wants to change the color of the header in the coolstore to a blue background color.</p>
+
+<p>First, open <em>monolith/src/main/webapp/app/css/coolstore.css</em> via CodeReady Workspace, which contains the CSS stylesheet for the CoolStore app.</p>
+
+<p>Add the following CSS to turn the header bar background to blue (<strong>Copy</strong> to add it at the bottom):</p>
+
+<pre><code class="language-java">
+.navbar-header {
+    background: blue
+}
+
+</code></pre>
+
+<p>Now we need to update the catalog endpoint in the monolith application. Copy the route URL of catalog service using following <strong>oc</strong> command in CodeReady Workspaces Terminal. Replace your username with <strong>userXX</strong>:</p>
+
+<p><code>echo "http://$(oc get route -n userXX-catalog | grep catalog | awk '{print $2}')"</code></p>
+
+<p>In the <strong>monolith</strong> project (within the root <strong>cloud-native-workshop-v2m2-labs</strong> project), open <code>catalog.js</code> in <code>src/main/webapp/app/services</code> and add a line as shown in the image to define the value of <code>baseUrl</code>.</p>
+
+<p><code>baseUrl="http://REPLACEURL/services/products";</code></p>
+
+<blockquote>
+  <p>Replace <code>REPLACEURL</code> with the URL emitted from the previous <code>echo</code> command</p>
+</blockquote>
+
+<p>Next, re-build the app once more via CodeReady Workspaces Terminal:</p>
+
+<p><code>cd /projects/cloud-native-workshop-v2m2-labs/monolith</code></p>
+
+<p><code>mvn clean package -Popenshift</code></p>
+
+<p>And re-deploy it to the dev environment using a binary build just as we did before via CodeReady Workspaces Terminal:</p>
+
+<p><code>oc start-build -n userXX-coolstore-dev coolstore --from-file=deployments/ROOT.war --follow</code></p>
+
+<p>Now wait for it to complete the deployment via CodeReady Workspaces Terminal:</p>
+
+<p><code>oc -n userXX-coolstore-dev rollout status -w dc/coolstore</code></p>
+
+<p>And verify that the blue header is visible in the dev application by navigating to the <code>userXX-coolstore-dev</code> project in the OpenShift Console, and then going to <em>Networking &gt; Routes</em> and clicking on the route URL. It should look like the following:</p>
+
+<blockquote>
+  <p>If it doesn’t, you may need to do a hard browser refresh. Try holding the shift key while clicking the browser refresh button.</p>
+</blockquote>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/nav-blue.png" alt="Dev"></p>
+
+<p>Then navigating to the <code>userXX-coolstore-prod</code> project in the OpenShift Console, and then going to <em>Networking &gt; Routes</em> and clicking on the route URL for the production app. It should still be black:</p>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/pipe-orig.png" alt="Prod"></p>
+
+<p>We’re happy with this change in dev, so let’s promote the new change to prod, using the new approval step!</p>
+
+<h4 id="run-the-pipeline-again">7. Run the pipeline again</h4>
+
+<hr>
+
+<p>Invoke the pipeline once more by navigating to <em>Builds &gt; Build Configs &gt; monolith-pipeline &gt; Rebuild</em>. The same pipeline progress will be shown, however before deploying to prod, you will see a prompt in the pipeline:</p>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/pipe-start2.png" alt="Prod">.</p>
+
+<p>Click on the link for <strong>Input Required</strong>. This will open a new tab and direct you to Jenkins itself, where you can login with the same credentials as OpenShift:</p>
+
+<ul>
+  <li>Username: <code>userXX</code></li>
+  <li>Password: <code>YYYYYY</code></li>
+</ul>
+
+<p>Accept the browser certificate warning and the Jenkins/OpenShift permissions, and then you’ll find yourself at the approval prompt:</p>
+
+<p>Click on <strong>Console Output</strong> on left menu then click on <code>Proceed</code>.</p>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/pipe-jenkins-prompt.png" alt="Prod"></p>
+
+<h4 id="approve-the-change-to-go-live">8. Approve the change to go live</h4>
+
+<hr>
+
+<p>Click <strong>Proceed</strong>, which will approve the change to be pushed to production. You could also have clicked <strong>Abort</strong> which would stop the pipeline immediately in case the change was unwanted or unapproved.</p>
+
+<p>Once you click <em>Proceed</em>, you will see the log file from Jenkins showing the final progress and deployment.</p>
+
+<p>Wait for the production deployment to complete via CodeReady Workspaces Terminal:</p>
+
+<p><code>oc rollout -n userXX-coolstore-prod status -w dc/coolstore-prod</code></p>
+
+<p>Once it completes, verify that the production application has the new change (blue header):</p>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/nav-blue.png" alt="Prod"></p>
+
+<blockquote>
+  <p>If it doesn’t, you may need to do a hard browser refresh. Try holding the shift key while clicking the browser refresh button.</p>
+</blockquote>
+
+<h4 id="run-the-pipeline-on-every-code-change">9. Run the Pipeline on Every Code Change</h4>
+
+<hr>
+
+<p>Manually triggering the deployment pipeline to run is useful but it would be better to run the pipeline automatically on every change in code or configuration, at least to lower environments (e.g. dev and test) and ideally all the way to production with some manual approvals in-place.</p>
+
+<p>In order to automate triggering the pipeline, you can define a webhook on your Git repository to notify OpenShift on every commit that is made to the Git repository and trigger a pipeline execution.</p>
+
+<p>You can get see the webhook links in the <a href="https://console-openshift-console.apps.cluster-XXXXXX.open.redhat.com/" target="_blank">OpenShift web console</a> by going to <em>Builds &gt; Build Configs &gt; monolith-pipeline</em>. Look for the <em>Generic secret</em> value in the <em>YAML</em> tab. Copy this down.</p>
+
+<p>Then go back to the <em>Overview</em> tab. At the bottom you’ll find the <em>Generic</em> webhook url which you will need (along with the secret) in the next steps.</p>
+
+<p>Go to your Git repository at <code>http://gogs-labs-infra.apps.cluster-XXXXXX.open.redhat.com/userXX/cloud-native-workshop-v2m2-labs.git</code> (replace <code>userXX</code> with your username and open this URL in a new tab), Click <strong>Sign In</strong> and sign in with your credentials:</p>
+
+<ul>
+  <li>Username: <code>userXX</code> (replace with your username)</li>
+  <li>Password: <code>YYYYYY</code></li>
+</ul>
+
+<p>then click on <strong>Settings</strong>.</p>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/cd-gogs-settings-link.png" alt="Repository Settings" width="900px"></p>
+
+<p>On the left menu, click on <strong>Webhooks</strong> and then on <strong>Add Webhook</strong> button and then <strong>Gogs</strong>.</p>
+
+<p>Create a webhook with the following details:</p>
+
+<ul>
+  <li>Payload URL: paste the Generic webhook url you copied from the <strong>monolith-pipeline</strong> (make sure to replace the <code>secret</code> value in the URL!)</li>
+  <li>Content type: <strong>application/json</strong></li>
+</ul>
+
+<p>Click on <strong>Add Webhook</strong>.</p>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/cd-gogs-webhook-add.png" alt="Repository Webhook" width="660px"></p>
+
+<p>All done. You can <strong>click on the newly defined webhook</strong> to see the list of <em>Recent Delivery</em>.  Click on the <strong>Test Delivery</strong> button allows you to manually trigger the webhook for testing purposes. Click on it and verify that the <em>monolith-pipeline</em> starts running immediately (navigate to <em>Builds &gt; Builds</em> then you should see one running. Click on it to ensure the pipeline is executing, and optionally confirm the <em>Approve Go Live</em> as before).</p>
+
+<p><code>Congratulations!</code> You have added a human approval step for all future developer changes. You now have two projects that can be visualized as:</p>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/goal.png" alt="Prod" width="800px"></p>
+
+<h4 id="summary">Summary</h4>
+
+<hr>
+
+<p>In this lab, you learned how to use the OpenShift Container Platform as a developer to build, and deploy applications. You also learned how OpenShift makes your life easier as a developer, architect, and DevOps engineer.</p>
+
+<p>You can use these techniques in future projects to modernize your existing applications and add a lot of functionality without major re-writes.</p>
+
+<p>The monolithic application we’ve been using so far works great, but is starting to show its age. Even small changes to one part of the app require many teams to be involved in the push to production.</p>
+
+        <hr>
+        <h2>Debugging Applications</h2>
+        <h2 id="lab2---debugging-applications">Lab2 - Debugging Applications</h2>
+
+<p>In this lab, you will debug the coolstore application using Java remote debugging and look into line-by-line code execution as the code runs on Quarkus.</p>
+
+<h4 id="enable-remote-debugging">1. Enable Remote Debugging</h4>
+
+<hr>
+
+<p>Remote debugging is a useful debugging technique for application development which allows looking into the code that is being executed somewhere else on a different machine and execute the code line-by-line to help investigate bugs and issues. Remote debugging is part of  Java SE standard debugging architecture which you can learn more about it in <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/jpda/architecture.html" target="_blank">Java SE docs</a>.</p>
+
+<p>Quarkus in development mode enables hot deployment with background compilation, which means that when you modify your Java files and/or your resource files and refresh your browser, these changes will automatically take effect. This works too for resource files like the configuration property file.</p>
+
+<p>This will also listen for a debugger on port 5005. If your want to wait for the debugger to attach before running you can pass -Ddebug on the command line. If you don’t want the debugger at all you can use -Ddebug=false.</p>
+
+<p>An easier approach would be to use the Quarkus maven plugin to enable remote debugging on the Inventory pod. It also forwards the default remote debugging port, 5005, from the Inventory pod to your workstation so simplify connectivity.</p>
+
+<p>Enable remote debugging on Inventory by running the following inside the <strong>inventory</strong> directory (<em>/projects/cloud-native-workshop-v2m2-labs/inventory</em>) in the CodeReady Workspaces Terminal window:</p>
+
+<p><code>mvn compile quarkus:dev</code></p>
+
+<blockquote>
+  <p>The default port for remoting debugging is <strong>5005</strong> but you can change the default port using <code>-Ddebug=port_num</code></p>
+</blockquote>
+
+<p>You are all set now to start debugging using the tools of you choice.</p>
+
+<p>Do not wait for the command to return! The Quarkus maven plugin keeps the forwarded port open so that you can start debugging remotely.</p>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/debug-che-quarkus.png" alt="Quarkus Debug"></p>
+
+<h4 id="remote-debug-with-codeready-workspace">2. Remote Debug with CodeReady Workspace</h4>
+
+<hr>
+
+<p>CodeReady Workspaces provides a convenience way to remotely connect to Java applications running inside containers and debug while following the code execution in the IDE.</p>
+
+<p>From the <strong>Run</strong> menu, click on <strong>Edit Debug Configurations…</strong>.</p>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/debug-che-debug-config-1.png" alt="Remote Debug"></p>
+
+<p>The window shows the debuggers available in CodeReady Workspace. Click on the plus sign near the
+Java debugger.</p>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/debug-che-debug-config-2.png" alt="Remote Debug"></p>
+
+<p>Configure the remote debugger and click on the <strong>Save</strong> button:</p>
+
+<ul>
+  <li>Check <strong>Connect to process on workspace machine</strong></li>
+  <li>Port: <strong>5005</strong></li>
+</ul>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/debug-che-debug-config-3.png" alt="Remote Debug"></p>
+
+<p>You can now click on <em>Save</em> then the <em>Debug</em> button to make CodeReady Workspaces connect to the Inventory service running on OpenShift.</p>
+
+<p>You should see a confirmation that the remote debugger is successfully connected.</p>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/debug-che-debug-config-4.png" alt="Remote Debug" width="700px"></p>
+
+<p>Open <em>com.redhat.coolstore.InventoryResource</em> and single-click on the editor sidebar on the line number of the first line of the <em>getAvailability()</em>
+method to add a breakpoint to that line.</p>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/debug-che-breakpoint.png" alt="Add Breakpoint"></p>
+
+<p>Note that you can use the the following icons to switch between debug and terminal windows.</p>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/debug-che-window-guide.png" alt="Icons"></p>
+
+<p>Invoke the endpoint URL of the Inventory service using <strong>curl</strong> command in a separate Terminal:</p>
+
+<p><code>curl http://localhost:8080/services/inventory/165613 ; echo</code></p>
+
+<p>Switch back to the debug panel and notice that the code execution is paused at the breakpoint on <em>InventoryResource</em> class.</p>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/debug-che-breakpoint-stop.png" alt="Icons"></p>
+
+<p>Click on the <em>Step Over</em> icon to execute one line and retrieve the inventory object for the given product id from the database.</p>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/debug-che-step-over.png" alt="Step Over" width="700px"></p>
+
+<p>The <em>Variables</em> panel allows you to see (and change) local variables.</p>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/debug-che-breakpoint-values.png" alt="Debug"></p>
+
+<p>This would allow you to see for example value of <em>itemId</em> variable passed into the method during execution.</p>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/debug-che-variables.png" alt="Watch Variables"></p>
+
+<p>Look at the <strong>Variables</strong> window. You can see the value of <em>itemId</em> along with the Stream variables used to retrieve the inventory.</p>
+
+<p>The product id(<em>165613</em>) is a unique value to retrieve certain data from the Inventory database. If you might have unexpected result or errors in development, this debugging feature will help you find the root cause quickly then you will eventually fix the issue.</p>
+
+<h4 id="resume-debug-and-confirm-the-result">3. Resume Debug and Confirm the Result</h4>
+
+<p>Click on the <em>Resume</em> icon to continue the code execution and then on the stop icon to end the debug session. When you swich to <em>Terminal-2</em> window, you will see the result of <strong>curl</strong> command.</p>
+
+<pre><code class="language-shell">[{"id":3,"itemId":"165613","link":"http://maps.google.com/?q=Seoul","location":"Seoul","quantity":256}]
+</code></pre>
+
+<blockquote>
+  <p>If you wait too long, the <code>curl</code> command may timeout and you won’t get any output. You can repeat the process to see it again.</p>
+</blockquote>
+
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/debug-che-window-result.png" alt="Icons"></p>
+
+<blockquote>
+  <p><code>NOTE</code>: Make sure to stop Quarkus development mode via <code>Close</code> terminal. Next, you need to open a new Terminal in CodeReady Workspaces then change the directory once again via <code>cd</code> command that you executed previously.</p>
+</blockquote>
+
+<h5 id="congratulations">Congratulations!</h5>
+
+
+        <hr>
+    </div>
+  </div>
+</main>
+
+
+
+</body></html>
