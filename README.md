@@ -2,16 +2,16 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [ARO v3 Javaアプリ開発者向けハンズオン](#aro-v3-java%E3%82%A2%E3%83%97%E3%83%AA%E9%96%8B%E7%99%BA%E8%80%85%E5%90%91%E3%81%91%E3%83%8F%E3%83%B3%E3%82%BA%E3%82%AA%E3%83%B3)
+- [ARO v3 Javaアプリケーション開発者向けハンズオン](#aro-v3-java%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E9%96%8B%E7%99%BA%E8%80%85%E5%90%91%E3%81%91%E3%83%8F%E3%83%B3%E3%82%BA%E3%82%AA%E3%83%B3)
   - [前提条件](#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6)
     - [Red Hat CodeReady WorkspacesのAROへのデプロイ](#red-hat-codeready-workspaces%E3%81%AEaro%E3%81%B8%E3%81%AE%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4)
   - [ハンズオン実施](#%E3%83%8F%E3%83%B3%E3%82%BA%E3%82%AA%E3%83%B3%E5%AE%9F%E6%96%BD)
     - [AROでのアプリケーション削除](#aro%E3%81%A7%E3%81%AE%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E5%89%8A%E9%99%A4)
-  - [Red Hat Application Migration Toolkit (RHAMT) によるJavaアプリ移行時の分析 (オプション)](#red-hat-application-migration-toolkit-rhamt-%E3%81%AB%E3%82%88%E3%82%8Bjava%E3%82%A2%E3%83%97%E3%83%AA%E7%A7%BB%E8%A1%8C%E6%99%82%E3%81%AE%E5%88%86%E6%9E%90-%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3)
+  - [Red Hat Application Migration Toolkit (RHAMT) によるJavaアプリケーション移行時の分析 (オプション)](#red-hat-application-migration-toolkit-rhamt-%E3%81%AB%E3%82%88%E3%82%8Bjava%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E7%A7%BB%E8%A1%8C%E6%99%82%E3%81%AE%E5%88%86%E6%9E%90-%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# ARO v3 Javaアプリ開発者向けハンズオン
+# ARO v3 Javaアプリケーション開発者向けハンズオン
 
 このコンテンツは、Red Hatが提供している[OpenShiftのハンズオンコンテンツの一部](https://github.com/RedHat-Middleware-Workshops/cloud-native-workshop-v2m1-guides)をベースにしています。他にも[様々なコンテンツ](https://github.com/RedHat-Middleware-Workshops)を提供していますので、興味がありましたらご参照ください。
 
@@ -126,8 +126,8 @@ $ oc new-app ...(中略)... -l LABEL_NAME -n PROJECT_NAME  ### アプリケー�
 $ oc delete all -l LABEL_NAME -n PROJECT_NAME  ### 特定のラベルが付いたアプリケーションと関連設定を一括削除
 ```
 
-## Red Hat Application Migration Toolkit (RHAMT) によるJavaアプリ移行時の分析 (オプション)
-RHAMTはアプリケーションを分析し、JavaのコードやJSP、XMLなどで、修正を必要とするところをHTML形式でレポートします。Red Hatがサポートを提供しているソフトウェアではありませんが、無償で利用することができます。対応している移行パスは、Oracle JDKからOpen JDK、JBoss EAPのアップグレード、WebLogic/WebSphereからJBoss EAPといったものがあります。RHAMTのレポートを参照すると、CodeReady WorkspaceやVisual Studio Codeなどでの効率的なJavaアプリケーションの開発ができるようになります。
+## Red Hat Application Migration Toolkit (RHAMT) によるJavaアプリケーション移行時の分析 (オプション)
+RHAMTはJavaアプリケーションを分析し、JavaのコードやJSP、XMLなどで、修正を必要とするところをHTML形式でレポートします。Red Hatがサポートを提供しているソフトウェアではありませんが、無償で利用することができます。対応している移行パスは、Oracle JDKからOpen JDK、JBoss EAPのアップグレード、WebLogic/WebSphereからJBoss EAPといったものがあります。RHAMTのレポートを参照すると、CodeReady WorkspaceやVisual Studio Codeなどでの効率的なJavaアプリケーションの開発ができるようになります。
 
 https://access.redhat.com/documentation/en-us/red_hat_application_migration_toolkit/4.3/html-single/getting_started_guide/index#supported_configurations
 
@@ -146,7 +146,7 @@ https://access.redhat.com/documentation/en-us/red_hat_application_migration_tool
 デフォルトのユーザ認証は、`rhamt/password`です。ログインできたら、下記のガイドに沿ってJavaアプリケーションを分析してみましょう。本ハンズオン用に、WebLogicからJBoss EAPへの移行シナリオを想定した2種類のWARファイルを用意しました。
 
 - [WebLogic用のコードが組み込まれているWARファイル](https://github.com/h-kojima/aro-handson/blob/master/rhamt/monolith.war)
-- [このコードをJBoss EAP用に修正したWARファイル](https://github.com/h-kojima/aro-handson/blob/master/rhamt/monolith-fixed.war)
+- [WebLogic用のコードをJBoss EAP用に修正したWARファイル](https://github.com/h-kojima/aro-handson/blob/master/rhamt/monolith-fixed.war)
 
 https://access.redhat.com/documentation/en-us/red_hat_application_migration_toolkit/4.3/html-single/web_console_guide/index#using_web_console_analyze_apps
 
