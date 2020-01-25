@@ -93,6 +93,26 @@ GitHubからプロジェクトをインポートして開発を進めます。`I
 
 https://bit.ly/36lLEAe
 
+### AROでのアプリケーション削除
+
+プロジェクト内のアプリケーションや関連する設定などを一括削除する場合は、`oc delete`コマンドを実行します。
+```
+$ oc delete all --all -n PROJECT_NAME
+```
+
+プロジェクトもまとめて消去する場合は、oc delete PROJECTコマンドを実行します。`--all`オプションを指定すると、作成した全てのプロジェクトを消去します。
+```
+$ oc delete project PROJECT_NAME
+$ oc delete project --all
+```
+
+なお、アプリケーション作成時に`-l LABEL_NAME`オプションを指定することで、アプリケーション削除の際に特定のアプリケーションのみ削除することもできます。
+
+```
+$ oc new-app ...(中略)... -l LABEL_NAME -n PROJECT_NAME  ### アプリケーションと関連設定に特定のラベルを付ける
+$ oc delete all -l LABEL_NAME -n PROJECT_NAME  ### 特定のラベルが付いたアプリケーションと関連設定を一括削除
+```
+
 ## Red Hat Application Migration Toolkit (RHAMT) によるJavaアプリ移行時の分析 (オプション)
 RHAMTはアプリケーションを分析し、JavaのコードやJSP、XMLなどで、修正を必要とするところをHTML形式でレポートします。Red Hatがサポートを提供しているソフトウェアではありませんが、無償で利用することができます。対応している移行パスは、Oracle JDKからOpen JDK、JBoss EAPのアップグレード、WebLogic/WebSphereからJBoss EAPといったものがあります。RHAMTのレポートを参照すると、CodeReady WorkspaceやVisual Studio Codeなどでの効率的なJavaアプリケーションの開発ができるようになります。
 
