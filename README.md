@@ -18,7 +18,7 @@
 - bashなどでシェルスクリプトが実行できること
 - OpenShiftのCLIツールである[ocコマンド](https://mirror.openshift.com/pub/openshift-v3/clients/3.11.154/)([Linux](https://mirror.openshift.com/pub/openshift-v3/clients/3.11.154/linux/)/[macOS](https://mirror.openshift.com/pub/openshift-v3/clients/3.11.154/macosx/)/[Windows](https://mirror.openshift.com/pub/openshift-v3/clients/3.11.154/windows/))をダウンロードして、実行できること
   - `/bin`などにPATHを通して、`./oc`や`./oc.exe`ではなく`oc`コマンドが実行できること
-- Google Chrome を利用できること
+- Google Chrome を利用できること (オプション)
   - ハンズオンコンテンツは英語ですが、Google Chromeの右クリックメニューの`日本語に翻訳`から日本語化可能
   - バージョン`79.0.3945.130`で動作確認をしていますが、他のWebブラウザでも実行可能
 - [ラーニングポータルサイト](https://learn.openshift.com/)の下記コースで紹介しているOpenShiftの基礎知識を習得していること
