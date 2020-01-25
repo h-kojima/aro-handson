@@ -39,10 +39,10 @@ data:
         # scheme defaults to 'http'.
 
         static_configs:
-        - targets: ['prometheus-arouser00-monitoring.apps.3cb3039dbab44a0298fa.southeastasia.azmosa.io']
+        - targets: ['prometheus-arouser00-monitoring.apps.XXXX.southeastasia.azmosa.io']
 
       - job_name: 'quarkus'
         metrics_path: '/metrics/application'
 
         static_configs:
-        - targets:  ['inventory-quarkus-arouser00-inventory.apps.3cb3039dbab44a0298fa.southeastasia.azmosa.io']
+        - targets:  ['inventory-quarkus-arouser00-inventory.apps.XXXX.southeastasia.azmosa.io']
