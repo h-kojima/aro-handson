@@ -13,12 +13,8 @@ metadata:
     openshift.io/display-name: Coolstore Monolith using pipelines
     tags: eap,postgresql,javaee,java,database,jboss,xpaas
     version: 1.0.0
-  creationTimestamp: "2020-01-25T03:30:49Z"
+  creationTimestamp: null
   name: coolstore-monolith-pipeline-build
-  namespace: openshift
-  resourceVersion: "17482"
-  selfLink: /apis/template.openshift.io/v1/namespaces/openshift/templates/coolstore-monolith-pipeline-build
-  uid: 152abff3-3f23-11ea-a0ac-0a580a80001a
 objects:
 - apiVersion: v1
   kind: ImageStream
