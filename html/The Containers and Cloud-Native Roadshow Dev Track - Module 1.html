@@ -472,7 +472,7 @@ OpenShift cluster.</p>
 
 <p>You will be using Red Hat CodeReady Workspaces, an online IDE based on <a href="https://www.eclipse.org/che/" target="_blank">Eclipe Che</a>. <strong>Changes to files are auto-saved every few seconds</strong>, so you don’t need to explicitly save changes.</p>
 
-<p>To get started, <a href="http://codeready-labs-infra.apps.cluster-tokyo-069d.tokyo-069d.open.redhat.com/" target="_blank">access the Che instance</a> and log in using the username and password you’ve been assigned (e.g. <code>userXX/r3dh4t1!</code>):</p>
+<p>To get started, access the Che instance and log in using the username and password you’ve been assigned (e.g. <code>userXX/r3dh4t1!</code>):</p>
 
 <p><img src="The%20Containers%20and%20Cloud-Native%20Roadshow%20Dev%20Track%20-%20Module%201_files/che-login.dms" alt="cdw"></p>
 
@@ -507,8 +507,8 @@ the course of this workshop, so keep this browser tab open throughout. <strong>I
 <p>In the project explorer pane, click on the <code>Import Projects...</code> and enter the following:</p>
 
 <ul>
-  <li>Version Control System: <code>GIT</code></li>
-  <li>URL: <code>http://gogs-labs-infra.apps.cluster-tokyo-069d.tokyo-069d.open.redhat.com/userXX/cloud-native-workshop-v2m1-labs.git</code>(IMPORTANT: replace userXX with your lab user)</li>
+  <li>Version Control System: <code>GITHUB</code></li>
+  <li>URL: <code>https://github.com/h-kojima/cloud-native-workshop-v2m1-labs</code></li>
   <li>Check <code>Import recursively (for multi-module projects)</code></li>
   <li>Name: <code>cloud-native-workshop-v2m1-labs</code></li>
 </ul>
@@ -551,7 +551,7 @@ terminal, you can use the CodeReady Workspaces Terminal window.</p>
 
 <hr>
 
-<p>Open the Issues report in the <a href="http://rhamt-web-console-labs-infra.apps.cluster-tokyo-069d.tokyo-069d.open.redhat.com/" target="_blank">RHAMT Console</a>:</p>
+<p>Open the Issues report in the RHAMT Console:</p>
 
 <p><img src="The%20Containers%20and%20Cloud-Native%20Roadshow%20Dev%20Track%20-%20Module%201_files/rhamt_project_issues.dms" alt="rhamt_project_issues"></p>
 
@@ -872,7 +872,7 @@ verify you made all the changes correctly and try the build again.</p>
 
 <p>In this step we will re-run the RHAMT report to verify our migration was successful.</p>
 
-<p>In the <a href="http://rhamt-web-console-labs-infra.apps.cluster-tokyo-069d.tokyo-069d.open.redhat.com/" target="_blank">RHAMT Console</a>, navigate to <code>Applications</code> on the left menu and click on <code>Add</code>. Enter the path to the fixed project at <code>/opt/solution</code> and click <strong>Upload</strong> to add the project:</p>
+<p>In the RHAMT Console, navigate to <code>Applications</code> on the left menu and click on <code>Add</code>. Enter the path to the fixed project at <code>/opt/solution</code> and click <strong>Upload</strong> to add the project:</p>
 
 <p><img src="The%20Containers%20and%20Cloud-Native%20Roadshow%20Dev%20Track%20-%20Module%201_files/rhamt_rerun_analysis_report_solution.dms" alt="rhamt_rerun_analysis_report"></p>
 
@@ -950,8 +950,7 @@ plus Red Hat OpenShift bring to the table.</p>
   <p><strong>NOTE</strong>: Use of self-signed certificates</p>
 
   <p>When you access the OpenShift web 
-console](https://console-openshift-console.apps.cluster-tokyo-069d.tokyo-069d.open.redhat.com)
- or other URLs via <em>HTTPS</em> protocol, you will see browser warnings
+console or other URLs via <em>HTTPS</em> protocol, you will see browser warnings
 like <code>Your &gt; Connection is not secure</code> since this workshop uses self-signed certificates (which you should not do in production!).
 For example, if you’re using <strong>Chrome</strong>, you will see the following screen.</p>
 
