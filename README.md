@@ -49,7 +49,8 @@ You don't have any projects. You can try to create a new project, by running
 
     oc new-project <projectname>
 
-$ 
+$ oc whoami
+arouserXXXX@azure.opentlc.com 
 ```
 
 ダウンロード後にインストーラを解凍して下記を実行します。このコマンドで、ARO上に`<YOUR_CODEREADY_PROJECT_NAME>`プロジェクトが自動的に作成され、その中にRed Hat CodeReady Workspacesのコンテナアプリがデプロイされます。なおプロジェクト名は、アカウント名を先頭や末尾につけるなどして、一意になるようにしてください。
@@ -65,7 +66,7 @@ $ ./deploy.sh --deploy \
 
 ## ハンズオン実施
 
-CodeReady Workspacesのデプロイが完了したら、`username: admin, password: admin`でログインします。AROのWebコンソールの`http://codeready-XXX.apps.YYYY.eastus.azmosa.io`からログインします。
+CodeReady Workspacesのデプロイが完了したら、`username: admin, password: admin`でログインします。AROのWebコンソールの`http://codeready-XXXX.apps.YYYY.eastus.azmosa.io`からログインします。
 
 <img src="https://github.com/h-kojima/aro-handson/blob/master/images/aro-overview.png" width="100%" height="100%">
 
