@@ -17,7 +17,7 @@
 ## 前提条件
 - bashなどでシェルスクリプトが実行できること
 - OpenShiftのCLIツールである[ocコマンド](https://mirror.openshift.com/pub/openshift-v3/clients/3.11.154/)([Linux](https://mirror.openshift.com/pub/openshift-v3/clients/3.11.154/linux/)/[macOS](https://mirror.openshift.com/pub/openshift-v3/clients/3.11.154/macosx/)/[Windows](https://mirror.openshift.com/pub/openshift-v3/clients/3.11.154/windows/))をダウンロードして、実行できること
-  - `/bin`などにPATHを通して、`./oc`ではなく`oc`コマンドが実行できること
+  - `/bin`などにPATHを通して、`./oc`や`./oc.exe`ではなく`oc`コマンドが実行できること
 - ARO環境にログインできること
 - 開発ツールとして利用する、Red Hat Codeready WorkspacesがARO上にデプロイされていること
 
