@@ -1053,6 +1053,10 @@ file). We will do this with the <code>oc</code> command line.</p>
 
 <p><code>mvn clean package -Popenshift</code></p>
 
+<p>If OutofMemory Error occures, then execute following the code.</p>
+
+<p><code>MAVEN_OPTS="-Xmx1024M -Xss128M -XX:MetaspaceSize=512M -XX:MaxMetaspaceSize=1024M -XX:+CMSClassUnloadingEnabled" mvn clean package -Popenshift</code></p>
+	    
 <blockquote>
   <p><code>NOTE</code>: Make sure to run this mvn command at working directory(i.e monolith).</p>
 </blockquote>
