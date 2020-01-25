@@ -100,7 +100,7 @@ https://bit.ly/36lLEAe
 $ oc delete all --all -n PROJECT_NAME
 ```
 
-プロジェクトもまとめて消去する場合は、oc delete PROJECTコマンドを実行します。`--all`オプションを指定すると、作成した全てのプロジェクトを消去します。
+プロジェクトもまとめて消去する場合は`oc delete project`コマンドを実行します。`--all`オプションを指定すると、作成した全てのプロジェクトを消去します。
 ```
 $ oc delete project PROJECT_NAME
 $ oc delete project --all
