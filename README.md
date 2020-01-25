@@ -6,7 +6,7 @@
   - [前提条件](#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6)
     - [Red Hat CodeReady WorkspacesのAROへのデプロイ](#red-hat-codeready-workspaces%E3%81%AEaro%E3%81%B8%E3%81%AE%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4)
   - [ハンズオン実施](#%E3%83%8F%E3%83%B3%E3%82%BA%E3%82%AA%E3%83%B3%E5%AE%9F%E6%96%BD)
-  - [(オプション項目) Red Hat Application Migration Toolkit (RHAMT) によるJavaアプリ移行時の分析](#%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E9%A0%85%E7%9B%AE-red-hat-application-migration-toolkit-rhamt-%E3%81%AB%E3%82%88%E3%82%8Bjava%E3%82%A2%E3%83%97%E3%83%AA%E7%A7%BB%E8%A1%8C%E6%99%82%E3%81%AE%E5%88%86%E6%9E%90)
+  - [Red Hat Application Migration Toolkit (RHAMT) によるJavaアプリ移行時の分析 (オプション)](#red-hat-application-migration-toolkit-rhamt-%E3%81%AB%E3%82%88%E3%82%8Bjava%E3%82%A2%E3%83%97%E3%83%AA%E7%A7%BB%E8%A1%8C%E6%99%82%E3%81%AE%E5%88%86%E6%9E%90-%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
