@@ -81,6 +81,8 @@ https://github.com/h-kojima/aro-handson/blob/master/workspace-config.json
 
 <img src="https://github.com/h-kojima/openshift/blob/master/arohandson/images/workspaces-init.png" width="100%" height="100%">
 
+**CodeReady WorkspacesのTerminalでは`oc`コマンドを最初から実行できるようになっています。本ハンズオンではCodeReady WorkspacesのTerminalでもARO環境へのログインを`oc`コマンドで実行する必要がありますので、忘れずにしておいてください。**
+
 これでハンズオンの前準備は完了です。
 
 ## ハンズオン実施
@@ -101,11 +103,6 @@ GitHubからプロジェクトをインポートして開発を進めます。`I
 これより先は、下記コンテンツの「**13. Add an OpenShift profile**」から、順番に実行していってください。それより上段のコンテンツは、本ハンズオンでは省略します。このコンテンツではログインユーザとして`userXX`を指定していますが、本ハンズオンで利用するアカウント名に変更して読み替えてください。また、プロジェクトは何も作られていない状態ですので、`oc new-project`などで適宜作成する必要があります。
 
 また、下記コンテンツはOpenShift v4版スクリーンショットになりますが、AROは現在OpenShift v3ベースなので、Webインタフェースの表示が異なります。リソースメニューの表示場所も若干異なりますので、ご注意ください。
-
-**注意点**
-
-**CodeReady WorkspacesのTerminalでは`oc`コマンドを最初から実行できるようになっていますが、本ハンズオンではCodeReady WorkspacesのTerminalでもARO環境へのログインをする必要がありますので、ご注意ください。**
-
 
 https://bit.ly/36lLEAe
 
