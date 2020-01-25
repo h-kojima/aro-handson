@@ -25,7 +25,8 @@
   - [Subsystems, Components, and Internals](https://learn.openshift.com/subsystems/)
 - Google Chrome を利用できること (オプション)
   - ハンズオンコンテンツは英語ですが、Google Chromeの右クリックメニューの`日本語に翻訳`から日本語化可能
-  - バージョン`79.0.3945.130`で動作確認をしていますが、他のWebブラウザでも実行可能
+  - バージョン`79.0.3945.130`で動作確認済み
+  - ハンズオンコンテンツは、Google Chrome以外のWebブラウザでも実行可能
 - ARO環境にログインできること (ハンズオン当日にご紹介)
 - Red Hat Codeready WorkspacesがARO上にデプロイされていること (ハンズオン当日にご紹介)
 
