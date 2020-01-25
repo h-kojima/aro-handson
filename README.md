@@ -92,7 +92,7 @@ GitHubからプロジェクトをインポートして開発を進めます。`I
 
 https://bit.ly/36lLEAe
 
-## (オプション項目) Red Hat Application Migration Toolkit (RHAMT) によるJavaアプリ移行時の分析
+## Red Hat Application Migration Toolkit (RHAMT) によるJavaアプリ移行時の分析 (オプション)
 RHAMTはアプリケーションを分析し、JavaのコードやJSP、XMLなどで、修正を必要とするところをHTML形式でレポートします。Red Hatがサポートを提供しているソフトウェアではありませんが、無償で利用することができます。対応している移行パスは、Oracle JDKからOpen JDK、JBoss EAPのアップグレード、WebLogic/WebSphereからJBoss EAPといったものがあります。RHAMTのレポートを参照すると、CodeReady WorkspaceやVisual Studio Codeなどでの効率的なJavaアプリケーションの開発ができるようになります。
 
 https://access.redhat.com/documentation/en-us/red_hat_application_migration_toolkit/4.3/html-single/getting_started_guide/index#supported_configurations
