@@ -50,7 +50,7 @@ You don't have any projects. You can try to create a new project, by running
     oc new-project <projectname>
 
 $ oc whoami
-arouserXXXX@azure.opentlc.com 
+arouserXXXX@azure.com 
 ```
 
 ダウンロード後にインストーラを解凍して下記を実行します。このコマンドで、ARO上に`<YOUR_CODEREADY_PROJECT_NAME>`プロジェクトが自動的に作成され、その中にRed Hat CodeReady Workspacesのコンテナアプリがデプロイされます。なおプロジェクト名は、アカウント名を先頭や末尾につけるなどして、一意になるようにしてください。
