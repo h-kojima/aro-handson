@@ -81,7 +81,7 @@ https://github.com/h-kojima/aro-handson/blob/master/workspace-config.json
 
 <img src="https://github.com/h-kojima/openshift/blob/master/arohandson/images/workspaces-init.png" width="100%" height="100%">
 
-**CodeReady WorkspacesのTerminalでは`oc`コマンドを最初から実行できるようになっています。本ハンズオンではCodeReady WorkspacesのTerminalでもARO環境へのログインを`oc`コマンドで実行する必要がありますので、忘れずにしておいてください。**
+**CodeReady WorkspacesのTerminalでは`oc`コマンドを最初から実行できるようになっています。本ハンズオンではCodeReady WorkspacesのTerminalでもARO環境へのログインを`oc`コマンドで実行する必要がありますので、忘れないようにしてください。**
 
 これでハンズオンの前準備は完了です。
 
