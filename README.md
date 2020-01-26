@@ -108,7 +108,7 @@ https://bit.ly/36lLEAe
 
 CodeReady WorkspacesにあるWorkspaceのプロジェクトは、右クリックして`Delete...`を選択すると削除できます。ハンズオンコンテンツを最初からやり直してみたい場合などに、実行してください。
 
-## ハンズオンB (Jenkins PipelineによるARO上での自動アプリデプロイとJavaアプリのリモートデバッグ)
+## ハンズオンB (Jenkins Pipelineによるアプリデプロイの自動化とJavaアプリのリモートデバッグ)
 
 
 
