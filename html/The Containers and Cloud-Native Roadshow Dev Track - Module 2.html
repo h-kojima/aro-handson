@@ -196,8 +196,8 @@ into a <em>dev</em> environment, and you’ll use more in this lab to provision 
 </blockquote>
 
 <ul>
-  <li>Version Control System: <code>GIT</code></li>
-  <li>URL: <code>http://gogs-labs-infra.apps.cluster-XXXXXX.open.redhat.com/userXX/cloud-native-workshop-v2m2-labs.git</code>(IMPORTANT: replace userXX with your lab user)</li>
+  <li>Version Control System: <code>GITHUB</code></li>
+  <li>URL: <code>https://github.com/h-kojima/cloud-native-workshop-v2m2-labs</code>(IMPORTANT: replace userXX with your lab user)</li>
   <li>Check <code>Import recursively (for multi-module projects)</code></li>
   <li>Name: <code>cloud-native-workshop-v2m2-labs</code></li>
 </ul>
@@ -239,31 +239,17 @@ then click on <code>Convert to Project</code> continuously.</p>
 
 <p>Although your Eclipse Che workspace is running on the Kubernetes cluster, it’s running with a default restricted <em>Service Account</em> that prevents you from creating most resource types. If you’ve completed other modules, you’re probably already logged in, but let’s login again: open a Terminal and issue the following command:</p>
 
-<p><code>oc login https://$KUBERNETES_SERVICE_HOST:$KUBERNETES_SERVICE_PORT --insecure-skip-tls-verify=true</code></p>
-
-<p>Enter your username and password assigned to you:</p>
-
-<ul>
-  <li>Username: <code>userXX</code></li>
-  <li>Password: <code>YYYYYY</code></li>
-</ul>
+<p><code>oc login https://$ADDRESS_OF_ARO --token=$YOURTOKEN</code></p>
 
 <p>You should see like:</p>
 
 <pre><code class="language-shell">Login successful.
 
-You have access to the following projects and can switch between them with 'oc project &lt;projectname&gt;':
+Logged into "https://openshift.XXXX.southeastasia.azmosa.io:443" as "arouserXXXX@azure.com" using the token provided.
 
-  * default
-    istio-system
-    user0-bookinfo
-    user0-catalog
-    user0-cloudnative-pipeline
-    user0-cloudnativeapps
-    user0-inventory
+You don't have any projects. You can try to create a new project, by running
 
-Using project "default".
-Welcome! See 'oc help' to get started.
+    oc new-project <projectname>
 </code></pre>
 
 <h5 id="if-this-is-the-first-module-you-are-doing-today-1">If this is the first module you are doing today</h5>
