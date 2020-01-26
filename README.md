@@ -112,7 +112,9 @@ CodeReady WorkspacesにあるWorkspaceのプロジェクトは、右クリック
 ## Jenkins Pipelineによるアプリデプロイの自動化とJavaアプリのリモートデバッグ
 
 ```
-oc new-app https://raw.githubusercontent.com/OpenShiftDemos/gogs-openshift-docker/master/openshift/gogs-template.yaml --param=GOGS_VERSION=0.11.34 --param=HOSTNAME=<YOUR_ACCOUNT_NAME>-gogs.apps.XXXX.southeastasia.azmosa.io --param=DATABASE_VERSION=10 --param=SKIP_TLS_VERIFY=true
+oc new-app https://raw.githubusercontent.com/OpenShiftDemos/gogs-openshift-docker/master/openshift/gogs-template.yaml \
+--param=GOGS_VERSION=0.11.34 --param=HOSTNAME=<YOUR_ACCOUNT_NAME>-gogs.apps.XXXX.southeastasia.azmosa.io \
+--param=DATABSE_VERSION=10 --param=SKIP_TLS_VERIFY=true
 ```
 
 https://bit.ly/36w9HfQ
