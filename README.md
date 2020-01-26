@@ -14,7 +14,7 @@
 
 # ARO v3 Javaアプリケーション開発者向けハンズオン
 
-このコンテンツは、Red Hatが提供している[OpenShiftのハンズオンコンテンツの一部](https://github.com/RedHat-Middleware-Workshops/cloud-native-workshop-v2m1-guides)をベースにしています。他にも[様々なコンテンツ](https://github.com/RedHat-Middleware-Workshops)を提供していますので、興味がありましたらご参照ください。
+このコンテンツは、Red Hatが提供しているOpenShiftのハンズオンコンテンツの[こちら](https://github.com/RedHat-Middleware-Workshops/cloud-native-workshop-v2m1-guides)と[こちら](https://github.com/RedHat-Middleware-Workshops/cloud-native-workshop-v2m2-guides)をベースにしています。他にも[様々なコンテンツ](https://github.com/RedHat-Middleware-Workshops)を提供していますので、興味がありましたらご参照ください。
 
 ## 前提条件
 - bashなどでシェルスクリプトをローカルマシンで実行できること
