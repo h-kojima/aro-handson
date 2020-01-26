@@ -5,8 +5,8 @@
 - [ARO v3 Javaアプリケーション開発者向けハンズオン](#aro-v3-java%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E9%96%8B%E7%99%BA%E8%80%85%E5%90%91%E3%81%91%E3%83%8F%E3%83%B3%E3%82%BA%E3%82%AA%E3%83%B3)
   - [前提条件](#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6)
     - [Red Hat CodeReady WorkspacesのAROへのデプロイ](#red-hat-codeready-workspaces%E3%81%AEaro%E3%81%B8%E3%81%AE%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4)
-  - [ハンズオンA (Quarkus/Spring Frameworkを利用したJavaアプリのマイクロサービス化とAROへのデプロイ)](#%E3%83%8F%E3%83%B3%E3%82%BA%E3%82%AA%E3%83%B3a-quarkusspring-framework%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%9Fjava%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%83%9E%E3%82%A4%E3%82%AF%E3%83%AD%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E5%8C%96%E3%81%A8aro%E3%81%B8%E3%81%AE%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4)
-  - [ハンズオンB (Jenkins Pipelineによるアプリデプロイの自動化とJavaアプリのリモートデバッグ)](#%E3%83%8F%E3%83%B3%E3%82%BA%E3%82%AA%E3%83%B3b-jenkins-pipeline%E3%81%AB%E3%82%88%E3%82%8B%E3%82%A2%E3%83%97%E3%83%AA%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4%E3%81%AE%E8%87%AA%E5%8B%95%E5%8C%96%E3%81%A8java%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%88%E3%83%87%E3%83%90%E3%83%83%E3%82%B0)
+  - [Quarkus/Spring Frameworkを利用したJavaアプリのマイクロサービス化とAROへのデプロイ](#quarkusspring-framework%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%9Fjava%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%83%9E%E3%82%A4%E3%82%AF%E3%83%AD%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E5%8C%96%E3%81%A8aro%E3%81%B8%E3%81%AE%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4)
+  - [Jenkins Pipelineによるアプリデプロイの自動化とJavaアプリのリモートデバッグ](#jenkins-pipeline%E3%81%AB%E3%82%88%E3%82%8B%E3%82%A2%E3%83%97%E3%83%AA%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4%E3%81%AE%E8%87%AA%E5%8B%95%E5%8C%96%E3%81%A8java%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%88%E3%83%87%E3%83%90%E3%83%83%E3%82%B0)
   - [AROでのアプリケーション削除](#aro%E3%81%A7%E3%81%AE%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E5%89%8A%E9%99%A4)
   - [Red Hat Application Migration Toolkit (RHAMT) によるJavaアプリケーション移行時の分析 (オプション)](#red-hat-application-migration-toolkit-rhamt-%E3%81%AB%E3%82%88%E3%82%8Bjava%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E7%A7%BB%E8%A1%8C%E6%99%82%E3%81%AE%E5%88%86%E6%9E%90-%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3)
 
@@ -86,7 +86,7 @@ https://github.com/h-kojima/aro-handson/blob/master/workspace-config.json
 
 これでハンズオンの前準備は完了です。
 
-## ハンズオンA (Quarkus/Spring Frameworkを利用したJavaアプリのマイクロサービス化とAROへのデプロイ)
+## Quarkus/Spring Frameworkを利用したJavaアプリのマイクロサービス化とAROへのデプロイ
 
 GitHubからプロジェクトをインポートして開発を進めます。`Import Project...`をクリックして、次の項目を指定して`Import`をクリックします。
 
@@ -109,7 +109,7 @@ https://bit.ly/36lLEAe
 
 CodeReady WorkspacesにあるWorkspaceのプロジェクトは、右クリックして`Delete...`を選択すると削除できます。ハンズオンコンテンツを最初からやり直してみたい場合などに、実行してください。
 
-## ハンズオンB (Jenkins Pipelineによるアプリデプロイの自動化とJavaアプリのリモートデバッグ)
+## Jenkins Pipelineによるアプリデプロイの自動化とJavaアプリのリモートデバッグ
 
 https://bit.ly/36w9HfQ
 
