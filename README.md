@@ -86,7 +86,7 @@ https://github.com/h-kojima/aro-handson/blob/master/workspace-config.json
 
 これでハンズオンの前準備は完了です。
 
-## ハンズオンA (QuarkusによるJavaアプリのマイクロサービス化とAROへのデプロイ)
+## ハンズオンA (Quarkus/Spring Frameworkを利用したJavaアプリのマイクロサービス化とAROへのデプロイ)
 
 GitHubからプロジェクトをインポートして開発を進めます。`Import Project...`をクリックして、次の項目を指定して`Import`をクリックします。
 
