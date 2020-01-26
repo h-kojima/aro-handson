@@ -85,7 +85,7 @@ https://github.com/h-kojima/aro-handson/blob/master/workspace-config.json
 
 これでハンズオンの前準備は完了です。
 
-## ハンズオン実施
+## ハンズオンA (QuarkusによるJavaアプリのマイクロサービス化とAROへのデプロイ)
 
 GitHubからプロジェクトをインポートして開発を進めます。`Import Project...`をクリックして、次の項目を指定して`Import`をクリックします。
 
@@ -107,6 +107,10 @@ GitHubからプロジェクトをインポートして開発を進めます。`I
 https://bit.ly/36lLEAe
 
 CodeReady WorkspacesにあるWorkspaceのプロジェクトは、右クリックして`Delete...`を選択すると削除できます。ハンズオンコンテンツを最初からやり直してみたい場合などに、実行してください。
+
+## ハンズオンB (Jenkins PipelineによるARO上での自動アプリデプロイとJavaアプリのリモートデバッグ)
+
+
 
 ## AROでのアプリケーション削除
 
