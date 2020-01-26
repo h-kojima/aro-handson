@@ -696,7 +696,7 @@ automation engine, which is automatically provisioned on-demand by OpenShift whe
 
 <hr>
 
-<p>Invoke the pipeline once more by navigating to <em>Builds &gt; Build Configs &gt; monolith-pipeline &gt; Rebuild</em>. The same pipeline progress will be shown, however before deploying to prod, you will see a prompt in the pipeline:</p>
+<p>Invoke the pipeline once more by navigating to <em>Builds &gt; Pipelines &gt; monolith-pipeline &gt; Start Pipeline</em>. The same pipeline progress will be shown, however before deploying to prod, you will see a prompt in the pipeline:</p>
 
 <p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/pipe-start2.png" alt="Prod">.</p>
 
@@ -741,7 +741,7 @@ automation engine, which is automatically provisioned on-demand by OpenShift whe
 
 <p>In order to automate triggering the pipeline, you can define a webhook on your Git repository to notify OpenShift on every commit that is made to the Git repository and trigger a pipeline execution.</p>
 
-<p>You can get see the webhook links in the <a href="https://console-openshift-console.apps.cluster-XXXXXX.open.redhat.com/" target="_blank">OpenShift web console</a> by going to <em>Builds &gt; Build Configs &gt; monolith-pipeline</em>. Look for the <em>Generic secret</em> value in the <em>YAML</em> tab. Copy this down.</p>
+<p>You can get see the webhook links in the <a href="https://console-openshift-console.apps.cluster-XXXXXX.open.redhat.com/" target="_blank">OpenShift web console</a> by going to <em>Builds &gt; Pipelines &gt; monolith-pipeline &gt; Configuratin tab</em>. Look for the <em>Generic Webhook URL</em>. Copy this down.</p>
 
 <p>Then go back to the <em>Overview</em> tab. At the bottom you’ll find the <em>Generic</em> webhook url which you will need (along with the secret) in the next steps.</p>
 
@@ -761,7 +761,7 @@ automation engine, which is automatically provisioned on-demand by OpenShift whe
 <p>Create a webhook with the following details:</p>
 
 <ul>
-  <li>Payload URL: paste the Generic webhook url you copied from the <strong>monolith-pipeline</strong> (make sure to replace the <code>secret</code> value in the URL!)</li>
+  <li>Payload URL: paste the Generic webhook url you copied from the <strong>monolith-pipeline</strong> <!--(make sure to replace the <code>secret</code> value in the URL!)--></li>
   <li>Content type: <strong>application/json</strong></li>
 </ul>
 
