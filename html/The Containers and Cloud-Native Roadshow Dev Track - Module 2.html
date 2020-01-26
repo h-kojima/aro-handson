@@ -167,7 +167,7 @@ into a <em>dev</em> environment, and you’ll use more in this lab to provision 
 
 <p>You will be using Red Hat CodeReady Workspaces, an online IDE based on <a href="https://www.eclipse.org/che/" target="_blank">Eclipe Che</a>. <strong>Changes to files are auto-saved every few seconds</strong>, so you don’t need to explicitly save changes.</p>
 
-<p>To get started, <a href="http://codeready-labs-infra.apps.cluster-XXXXXX.open.redhat.com/" target="_blank">access the Che instance</a> and log in using the username and password you’ve been assigned (e.g. <code>userXX/YYYYYY</code>):</p>
+<p>To get started, <a href="http://codeready-labs-infra.apps.cluster-XXXXXX.open.redhat.com/" target="_blank">access the Che instance</a> and log in using the username and password you’ve been assigned (e.g. <code>admin/admin</code>):</p>
 
 <p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/che-login.png" alt="cdw"></p>
 
@@ -197,12 +197,11 @@ into a <em>dev</em> environment, and you’ll use more in this lab to provision 
 
 <ul>
   <li>Version Control System: <code>GITHUB</code></li>
-  <li>URL: <code>https://github.com/h-kojima/cloud-native-workshop-v2m2-labs</code>(IMPORTANT: replace userXX with your lab user)</li>
+  <li>URL: <code>https://github.com/h-kojima/cloud-native-workshop-v2m2-labs</code></li>
   <li>Check <code>Import recursively (for multi-module projects)</code></li>
   <li>Name: <code>cloud-native-workshop-v2m2-labs</code></li>
 </ul>
 
-<p><strong>Tip</strong>: You can find GIT URL when you click on <a href="http://gogs-labs-infra.apps.cluster-XXXXXX.open.redhat.com/" target="_blank">GIT URL</a> then login with your credentials.</p>
 
 <p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/codeready-workspace-import.png" alt="codeready-workspace-import" width="700px"></p>
 
@@ -243,7 +242,7 @@ then click on <code>Convert to Project</code> continuously.</p>
 
 <p>You should see like:</p>
 
-<pre><code class="language-shell">Login successful.
+<pre><code class="language-shell">
 
 Logged into "https://openshift.XXXX.southeastasia.azmosa.io:443" as "arouserXXXX@azure.com" using the token provided.
 
@@ -288,7 +287,7 @@ You don't have any projects. You can try to create a new project, by running
   <li>Route: <strong>www</strong> route registers the service on the built-in external load-balancer and assigns a public DNS name to it so that it can be reached from outside OpenShift cluster.</li>
 </ul>
 
-<p>You can review the above resources in the <a href="https://console-openshift-console.apps.cluster-XXXXXX.open.redhat.com/" target="_blank">OpenShift web console</a> or using the <em>oc get</em> or <em>oc describe</em> commands (oc describe gives more detailed info):</p>
+<p>You can review the above resources in the <a href="https://console-openshift-console.apps.cluster-XXXXXX.open.redhat.com/" target="_blank">ARO web console</a> or using the <em>oc get</em> or <em>oc describe</em> commands (oc describe gives more detailed info):</p>
 
 <blockquote>
   <p>You can use short synonyms for long words, like <strong>bc</strong> instead of <strong>buildconfig</strong>, <strong>is</strong> for <strong>imagestream</strong>, <strong>dc</strong> for <strong>deploymentconfig</strong>, <strong>svc</strong> for <strong>service</strong>, etc.</p>
@@ -438,13 +437,15 @@ For example, if you’re using <strong>Chrome</strong>, you will see the followi
 
 <p><code>oc project userXX-coolstore-prod</code></p>
 
-<p>And finally deploy template:</p>
+<p>And finally deploy template: (The following code must be executed <strong>in your local machine's terminal</strong>, not in CodeReady Workspaces' terminal)</p>
 
-<p><code>oc new-app --template=coolstore-monolith-pipeline-build</code></p>
+<p><code>oc new-app https://raw.githubusercontent.com/h-kojima/aro-handson/master/coolstore-monolith-pipeline-build.yml</code></p>
 
+<!--
 <p>We have to deploy a <strong>Jenkins Server</strong> in the namespace because OpenShift 4 doesn’t deploy a Jenkins server automatically when we use <em>Jenkins Pipeline</em> build strategy.</p>
 
 <p><code>oc new-app --template=jenkins-ephemeral -l app=jenkins -p JENKINS_SERVICE_NAME=jenkins -p DISABLE_ADMINISTRATIVE_MONITORS=true</code></p>
+-->
 
 <p><code>oc set resources dc/jenkins --limits=cpu=1,memory=2Gi --requests=cpu=1,memory=512Mi</code></p>
 
@@ -492,7 +493,7 @@ automation engine, which is automatically provisioned on-demand by OpenShift whe
 
 <hr>
 
-<p>Our pipeline is somewhat simplified for the purposes of this Workshop. Inspect the contents of the pipeline by navigating <em>Builds &gt; Build Configs</em> and click on <code>monolith-pipeline</code> in the <a href="https://console-openshift-console.apps.cluster-XXXXXX.open.redhat.com/" target="_blank">OpenShift web console</a>. Then, you will see the details of <em>Jenkinsfile</em> on the right side:</p>
+<p>Our pipeline is somewhat simplified for the purposes of this Workshop. Inspect the contents of the pipeline by navigating <em>Builds &gt; Pipelines</em> and click on <code>monolith-pipeline</code> in the <a href="https://console-openshift-console.apps.cluster-XXXXXX.open.redhat.com/" target="_blank">OpenShift web console</a>. Then, you will see the details of <em>Jenkinsfile</em> on the right side:</p>
 
 <p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/coolstore-prod-monolith-bc.png" alt="monolith-pipeline"></p>
 
@@ -553,17 +554,21 @@ automation engine, which is automatically provisioned on-demand by OpenShift whe
 
 <p>Before promoting the dev image, you need to modify a <strong>RoleBinding</strong> to access the dev image by Jenkins. This allows the Jenkins service account in the <strong>userXX-coolstore-prod</strong> project to access the image within the <strong>userXX-coolstore-dev</strong> project.</p>
 
-<p>Go to overview page of the <code>userXX-coolstore-dev</code> project, then navigate to <em>Administration &gt; Role Bindings</em>. Click on <strong>ci_admin</strong>:</p>
+<p>Go to overview page of the <code>userXX-coolstore-dev</code> project, then navigate to <em>Resouces &gt; Other Resources, (Administration &gt; Role Bindings in OpenShift 4 Console)</em>. Click on <strong>ci_admin</strong>:</p>
 
+<p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/aro-rolebindings.png" alt="Prod"></p>
+
+<!--
 <p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/coolstore-dev-ci-admin.png" alt="Prod"></p>
+-->
 
-<p>Move to <strong>YAML</strong> tab and replace your username with <em>userXX</em> then click on <strong>Save</strong>:</p>
+<p>Navigate to <strong>Actions &gt; Edit YAML and replace your username with <em>userXX</em> then click on <strong>Save</strong>:</p>
 
 <p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/coolstore-dev-ci-admin-save.png" alt="Prod"></p>
 
 <p>Let’s invoke the build pipeline by using <a href="https://console-openshift-console.apps.cluster-XXXXXX.open.redhat.com/" target="_blank">OpenShift web console</a>. Open the production project in the web console.</p>
 
-<p>Next, navigate to <em>Builds &gt; Build Configs &gt; monolith-pipeline</em>, click the small menu at the far right, and click <em>Start Build</em>:</p>
+<p>Next, navigate to <em>Builds &gt; Pieplines &gt; monolith-pipeline</em>, click the small menu at the far right, and click <em>Start Build</em>:</p>
 
 <p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/pipe-start.png" alt="Prod"></p>
 
@@ -603,11 +608,11 @@ automation engine, which is automatically provisioned on-demand by OpenShift whe
 
 <p>Ordinarily your pipeline definition would be checked into a source code management system like Git, and to change the pipeline you’d edit the <em>Jenkinsfile</em> in the source base. For this workshop we’ll just edit it directly to add the necessary changes. You can edit it with the <strong>oc</strong> command but we’ll use the Web Console.</p>
 
-<p>Go back to <em>Builds &gt; Build Configs &gt; monolith-pipeline</em> then click on <em>Edit Build Config</em>.</p>
+<p>Go back to <em>Builds &gt; Pipelines &gt; monolith-pipeline</em> then click on <em>Edit Build Config</em>.</p>
 
 <p><img src="./The Containers and Cloud-Native Roadshow Dev Track - Module 2_files/pipe-edit.png" alt="Prod"></p>
 
-<p>Click on <strong>YAML</strong> tab and add <em>a new stage</em> to the pipeline, just before the <em>Deploy to PROD</em> stage:</p>
+<p>Click on <strong>Edit YAML</strong> menu and add <em>a new stage</em> to the pipeline, just before the <em>Deploy to PROD</em> stage:</p>
 
 <blockquote>
   <p>NOTE: You will need to copy and paste the below code into the right place as shown in the below image.</p>
@@ -645,6 +650,7 @@ automation engine, which is automatically provisioned on-demand by OpenShift whe
 
 </code></pre>
 
+<!--
 <p>Now we need to update the catalog endpoint in the monolith application. Copy the route URL of catalog service using following <strong>oc</strong> command in CodeReady Workspaces Terminal. Replace your username with <strong>userXX</strong>:</p>
 
 <p><code>echo "http://$(oc get route -n userXX-catalog | grep catalog | awk '{print $2}')"</code></p>
@@ -656,6 +662,7 @@ automation engine, which is automatically provisioned on-demand by OpenShift whe
 <blockquote>
   <p>Replace <code>REPLACEURL</code> with the URL emitted from the previous <code>echo</code> command</p>
 </blockquote>
+-->
 
 <p>Next, re-build the app once more via CodeReady Workspaces Terminal:</p>
 
