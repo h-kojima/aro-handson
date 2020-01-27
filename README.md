@@ -192,11 +192,13 @@ https://access.redhat.com/documentation/en-us/red_hat_application_migration_tool
 デフォルトのユーザ認証は、`rhamt/password`です。ログインできたら、下記のガイドに沿ってJavaアプリケーションを分析してみましょう。本ハンズオン用に、WebLogicからJBoss EAPへの移行シナリオを想定した2種類のWARファイルを用意しました。
 
 - [WebLogic用のコードが組み込まれているWARファイル](https://github.com/h-kojima/aro-handson/blob/master/rhamt/monolith.war)
+  - [ソースコード](https://github.com/RedHat-Middleware-Workshops/cloud-native-workshop-v2m1-labs/tree/master/monolith)
 - [WebLogic用のコードをJBoss EAP用に修正したWARファイル](https://github.com/h-kojima/aro-handson/blob/master/rhamt/monolith-fixed.war)
+  - [修正後のソースコード](https://github.com/h-kojima/cloud-native-workshop-v2m1-labs/tree/master/monolith)
 
 https://access.redhat.com/documentation/en-us/red_hat_application_migration_toolkit/4.3/html-single/web_console_guide/index#using_web_console_analyze_apps
 
-これらのWARファイルを利用して、RHAMT上でどのようなHTMLレポートが表示されるか確認してみてください。表示されるHTMLレポートの内容については、下記コンテンツの「**Lab1 - Decide which Application Server to use in OpenShift**」を参考にできます。
+これらのWARファイルを利用して、RHAMT上でどのようなHTMLレポートが表示されるか確認してみてください。表示されるHTMLレポートの内容については、下記コンテンツの「**Lab1 - Decide which Application Server to use in OpenShift**」を参考にできます。また`git clone`などでソースコードをダウンロードして差分を確認してみてください。
 
 https://bit.ly/36lLEAe
 
