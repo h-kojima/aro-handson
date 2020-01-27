@@ -120,18 +120,31 @@ $ oc new-app https://raw.githubusercontent.com/OpenShiftDemos/gogs-openshift-doc
 --param=HOSTNAME=<YOUR_ACCOUNT_NAME>-gogs.apps.<YOUR_SUB_DOMAIN>.azmosa.io
 ```
 
-GogsサーバのWebコンソールにログインします。
+GogsサーバのWebコンソールにログインします。先程作成しました`<YOUR_ACCOUNT_NAME>-gogs`プロジェクトに表示されているURLです。
 
 <img src="https://github.com/h-kojima/aro-handson/blob/master/images/gogs-url.png" width="100%" height="100%">
 
+Webコンソールにアクセスすると、下記のような画面が表示されます。最初は何もアカウントが作成されていない状態ですので、右上の「登録」から新規アカウントを作成してログインします。
+
 <img src="https://github.com/h-kojima/aro-handson/blob/master/images/gogs-default.png" width="100%" height="100%">
+
+ログイン後はGitリポジトリを用意します。本ハンズオン用に用意しましたリポジトリをミラーして作成します。この場合は「ミラー」-> 「自分のリポジトリ」の横の「+」をクリックして下記を設定して「リポジトリの移行」をクリックします。
+
+- クローンアドレス: https://github.com/h-kojima/cloud-native-workshop-v2m2-labs
+- リポジトリ名: cloud-native-workshop-v2m2-labs
+- 「このリポジトリは、ミラーになります」のチェックを外す
 
 <img src="https://github.com/h-kojima/aro-handson/blob/master/images/gogs-mirror01.png" width="100%" height="100%">
 
 <img src="https://github.com/h-kojima/aro-handson/blob/master/images/gogs-mirror02.png" width="100%" height="100%">
 
+これが完了するとリモートからリポジトリの内容がクローンされて、リポジトリの内容を修正できるようになります。
+
 <img src="https://github.com/h-kojima/aro-handson/blob/master/images/gogs-mirror03.png" width="100%" height="100%">
 
+これより先は、下記コンテンツを順番に実行していってください。このコンテンツではログインユーザとして`userXX`を指定していますが、本ハンズオンで利用するアカウント名に変更して読み替えてください。GogsリポジトリのURLは上記画面に表示されているリポジトリのURLを利用してください。また、プロジェクトは何も作られていない状態ですので、`oc new-project`などで適宜作成する必要があります。
+
+また、下記コンテンツはOpenShift v4版スクリーンショットになりますが、AROは現在OpenShift v3ベースなので、Webインタフェースの表示が異なります。リソースメニューの表示場所も若干異なりますので、ご注意ください。
 
 https://bit.ly/36w9HfQ
 
