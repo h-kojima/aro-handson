@@ -111,13 +111,13 @@ CodeReady WorkspacesにあるWorkspaceのプロジェクトは、右クリック
 
 ## B. Jenkins Pipelineによるアプリの自動デプロイとJavaアプリのリモートデバッグ
 
-このハンズオンではオープンソースのセルフホステッドなGitサービスを提供する[Gogs](https://gogs.io/)を利用します。GogsはOpenShift上のコンテナアプリとしても構築・起動できます。Gogsコンテナアプリを構築するためのテンプレートファイルを利用して、AROにデプロイするために次のコマンドを実行します。`YOUR_ACCOUNT_NAME`は利用しているアカウント名に、`XXXX`はAROのWebコンソールにアクセスするためのURLの`openshift`と`azmosa.io`の間にある文字列に適宜修正してください。(例えば`openshift.00a123.eastus.azmosa.io`の場合なら`XXXX`は`00a123.eastus`になります。)
+このハンズオンではオープンソースのセルフホステッドなGitサービスを提供する[Gogs](https://gogs.io/)を利用します。GogsはOpenShift上のコンテナアプリとしても構築・起動できます。Gogsコンテナアプリを構築するためのテンプレートファイルを利用して、AROにデプロイするために次のコマンドを実行します。`YOUR_ACCOUNT_NAME`は利用しているアカウント名に、`YOUR_SUB_DOMAIN`はAROのWebコンソールにアクセスするためのURLの`openshift`と`azmosa.io`の間にある文字列に適宜修正してください。(例えば`openshift.00a123.eastus.azmosa.io`の場合なら`YOUR_SUB_DOMAIN`は`00a123.eastus`になります。)
 
 ```
 $ oc new-project <YOUR_ACCOUNT_NAME>-gogs
 $ oc new-app https://raw.githubusercontent.com/OpenShiftDemos/gogs-openshift-docker/master/openshift/gogs-template.yaml \
 --param=DATABASE_VERSION=10 --param=SKIP_TLS_VERIFY=true --param=GOGS_VERSION=0.11.34 \
---param=HOSTNAME=<YOUR_ACCOUNT_NAME>-gogs.apps.XXXX.azmosa.io
+--param=HOSTNAME=<YOUR_ACCOUNT_NAME>-gogs.apps.<YOUR_SUB_DOMAIN>.azmosa.io
 ```
 
 GogsサーバのWebコンソールにログインします。
