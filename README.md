@@ -70,7 +70,7 @@ CodeReady Workspacesのデプロイが完了したら、`username: admin, passwo
 
 ログイン後は、作業スペースとなるWorkspaceを作成します。`Spring Boot`スタックを選択して、`Create and Proceed Editing`をクリックします。
 
-<img src="https://github.com/h-kojima/openshift/blob/master/arohandson/images/crw-create.png" width="100%" height="100%">
+<img src="https://github.com/h-kojima/aro-handson/blob/master/images/crw-create.png" width="100%" height="100%">
 
 `Config`のJSONファイルを編集します。既存の内容を全て削除して、下記URLのJSONファイルの内容に置換してください。このJSONファイルではWorkspaceの名前を`wksp-XXXX`としていますが、ユーザ名を利用するなど適宜変更してください。その後、右上の`RUN`を実行します。
 
@@ -80,7 +80,7 @@ https://github.com/h-kojima/aro-handson/blob/master/workspace-config.json
 
 5~10分程待つと、Workspaceが作成されて下記のような画面が表示されます。
 
-<img src="https://github.com/h-kojima/openshift/blob/master/arohandson/images/workspaces-init.png" width="100%" height="100%">
+<img src="https://github.com/h-kojima/aro-handson/blob/master/images/workspaces-init.png" width="100%" height="100%">
 
 **CodeReady WorkspacesのTerminalでは`oc`コマンドを最初から実行できるようになっています。本ハンズオンではCodeReady WorkspacesのTerminalでもARO環境へのログインを`oc`コマンドで実行する必要がありますので、忘れないようにしてください。**
 
@@ -122,15 +122,15 @@ $ oc new-app https://raw.githubusercontent.com/OpenShiftDemos/gogs-openshift-doc
 
 GogsサーバのWebコンソールにログインします。
 
-<img src="https://github.com/h-kojima/openshift/blob/master/arohandson/images/gogs-url.png" width="100%" height="100%">
+<img src="https://github.com/h-kojima/aro-handson/blob/master/images/gogs-url.png" width="100%" height="100%">
 
-<img src="https://github.com/h-kojima/openshift/blob/master/arohandson/images/gogs-default.png" width="100%" height="100%">
+<img src="https://github.com/h-kojima/aro-handson/blob/master/images/gogs-default.png" width="100%" height="100%">
 
-<img src="https://github.com/h-kojima/openshift/blob/master/arohandson/images/gogs-mirror01.png" width="100%" height="100%">
+<img src="https://github.com/h-kojima/aro-handson/blob/master/images/gogs-mirror01.png" width="100%" height="100%">
 
-<img src="https://github.com/h-kojima/openshift/blob/master/arohandson/images/gogs-mirror02.png" width="100%" height="100%">
+<img src="https://github.com/h-kojima/aro-handson/blob/master/images/gogs-mirror02.png" width="100%" height="100%">
 
-<img src="https://github.com/h-kojima/openshift/blob/master/arohandson/images/gogs-mirror03.png" width="100%" height="100%">
+<img src="https://github.com/h-kojima/aro-handson/blob/master/images/gogs-mirror03.png" width="100%" height="100%">
 
 
 https://bit.ly/36w9HfQ
