@@ -17,7 +17,7 @@
 このコンテンツは、Red Hatが提供しているOpenShiftのハンズオンコンテンツの[こちら](https://github.com/RedHat-Middleware-Workshops/cloud-native-workshop-v2m1-guides)と[こちら](https://github.com/RedHat-Middleware-Workshops/cloud-native-workshop-v2m2-guides)をベースにしています。他にも[様々なコンテンツ](https://github.com/RedHat-Middleware-Workshops)を提供していますので、興味がありましたらご参照ください。
 
 ## 前提条件
-- bashなどでシェルスクリプトをローカルマシンで実行できること
+- bashでシェルスクリプトをローカルマシンで実行できること
 - OpenShiftのCLIツールである[ocコマンド](https://mirror.openshift.com/pub/openshift-v3/clients/3.11.154/)([Linux](https://mirror.openshift.com/pub/openshift-v3/clients/3.11.154/linux/)/[macOS](https://mirror.openshift.com/pub/openshift-v3/clients/3.11.154/macosx/)/[Windows](https://mirror.openshift.com/pub/openshift-v3/clients/3.11.154/windows/))をローカルマシンで実行できること
   - `/bin`などにPATHを通して、`./oc`や`./oc.exe`ではなく`oc`コマンドが実行できること
 - [ラーニングポータルサイト](https://learn.openshift.com/)の下記コースで紹介しているOpenShiftの基礎知識を習得していること<br>
@@ -36,6 +36,8 @@
 Red Hat CodeReady Workspacesのインストール用プログラムを、[Red Hat Developer](https://developers.redhat.com/)からダウンロードします。Red Hat Developerは開発者向けに様々なRed Hatのリソースを提供しているサイトです。こちらに登録してRed Hat Developer Suiteサブスクリプションを取得することで、RHEL, OpenShift, JBoss EAPを始めとした各種ミドルウェア製品をダウンロードできるようになります。**1ユーザ(共用不可)、1台のみ、ソフトウェア開発用途のみ**、と用途は限定されますが、その代わり1年間有効のサブスクリプションとなっていて有効期限が切れたら再度更新することもできます。Red Hat Codeready Workspacesのダウンロードサイトは下記です。Red Hat CodeReady Workspacesの最新版は2.0までリリースしていますが、本ハンズオンでは`1.0.2`のインストーラをダウンロードしてください。
 
 https://developers.redhat.com/products/codeready-workspaces/download
+
+
 
 インストーラを実行する前に、`oc`コマンドを実行してARO環境にログインします。ログインコマンドは、AROのWebコンソールの`Copy Login Command`からコピーできます。
 
