@@ -198,8 +198,8 @@ into a <em>dev</em> environment, and you’ll use more in this lab to provision 
 </blockquote>
 
 <ul>
-  <li>Version Control System: <code>GITHUB</code></li>
-  <li>URL: <code>https://github.com/h-kojima/cloud-native-workshop-v2m2-labs</code></li>
+  <li>Version Control System: <code>GIT</code></li>
+  <li>URL: <code>http://<YOUR_GOGS_REPOSITORY_URL></code></li>
   <li>Check <code>Import recursively (for multi-module projects)</code></li>
   <li>Name: <code>cloud-native-workshop-v2m2-labs</code></li>
 </ul>
@@ -747,7 +747,7 @@ automation engine, which is automatically provisioned on-demand by OpenShift whe
 
 <p>Then go back to the <em>Overview</em> tab. At the bottom you’ll find the <em>Generic</em> webhook url which you will need (along with the secret) in the next steps.</p>
 
-<p>Go to your Git repository at <code>http://gogs-labs-infra.apps.cluster-XXXXXX.open.redhat.com/userXX/cloud-native-workshop-v2m2-labs.git</code> (replace <code>userXX</code> with your username and open this URL in a new tab), Click <strong>Sign In</strong> and sign in with your credentials:</p>
+<p>Go to your Git repository at <code>http://<YOUR_GOGS_REPOSITORY_URL></code> (replace <code>userXX</code> with your username and open this URL in a new tab), Click <strong>Sign In</strong> and sign in with your credentials:</p>
 
 <ul>
   <li>Username: <code>userXX</code> (replace with your username)</li>
@@ -763,7 +763,7 @@ automation engine, which is automatically provisioned on-demand by OpenShift whe
 <p>Create a webhook with the following details:</p>
 
 <ul>
-  <li>Payload URL: paste the Generic webhook url you copied from the <strong>monolith-pipeline</strong> <!--(make sure to replace the <code>secret</code> value in the URL!)--></li>
+	<li>Payload URL: <strong>paste the Generic webhook url you copied from the </strong>monolith-pipeline <!--(make sure to replace the <code>secret</code> value in the URL!)--></li>
   <li>Content type: <strong>application/json</strong></li>
 </ul>
 
