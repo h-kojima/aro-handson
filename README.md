@@ -122,6 +122,15 @@ $ oc new-app https://raw.githubusercontent.com/OpenShiftDemos/gogs-openshift-doc
 
 GogsサーバのWebコンソールにログインします。
 
+<img src="https://github.com/h-kojima/openshift/blob/master/arohandson/images/gogs-url.png" width="100%" height="100%">
+
+<img src="https://github.com/h-kojima/openshift/blob/master/arohandson/images/gogs-default.png" width="100%" height="100%">
+
+<img src="https://github.com/h-kojima/openshift/blob/master/arohandson/images/gogs-mirror01.png" width="100%" height="100%">
+
+<img src="https://github.com/h-kojima/openshift/blob/master/arohandson/images/gogs-mirror02.png" width="100%" height="100%">
+
+<img src="https://github.com/h-kojima/openshift/blob/master/arohandson/images/gogs-mirror03.png" width="100%" height="100%">
 
 
 https://bit.ly/36w9HfQ
