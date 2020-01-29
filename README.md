@@ -72,6 +72,10 @@ CodeReady Workspacesのデプロイが完了したら、`username: admin, passwo
 
 <img src="https://github.com/h-kojima/aro-handson/blob/master/images/aro-overview.png" width="100%" height="100%">
 
+デフォルトの`admin`ユーザの他にも、新規ユーザを作成してログインできます。この場合はログイン画面の右の方に表示されている`Regsiter`から新規ユーザを作成します。
+
+<img src="https://github.com/h-kojima/aro-handson/blob/master/images/crw-newuser.png" width="100%" height="100%">
+
 ログイン後は、作業スペースとなるWorkspaceを作成します。`Spring Boot`スタックを選択して、`Create and Proceed Editing`をクリックします。
 
 <img src="https://github.com/h-kojima/aro-handson/blob/master/images/crw-create.png" width="100%" height="100%">
@@ -108,6 +112,8 @@ GitHubからプロジェクトをインポートして開発を進めます。`I
 これより先は、下記コンテンツの「**13. Add an OpenShift profile**」から、順番に実行していってください。それより上段のコンテンツは、本ハンズオンでは省略します。このコンテンツではログインユーザとして`userXX`を指定していますが、本ハンズオンで利用するアカウント名に変更して読み替えてください。また、プロジェクトは何も作られていない状態ですので、`oc new-project`などで適宜作成する必要があります。
 
 また、下記コンテンツはOpenShift v4版スクリーンショットになりますが、AROは現在OpenShift v3ベースなので、Webインタフェースの表示が異なります。リソースメニューの表示場所も若干異なりますので、ご注意ください。
+
+**CodeReady WorkspacesのTerminalでは`oc`コマンドを最初から実行できるようになっています。本ハンズオンではCodeReady WorkspacesのTerminalでもARO環境へのログインを`oc`コマンドで実行する必要がありますので、忘れないようにしてください。**
 
 https://bit.ly/36lLEAe
 
@@ -149,6 +155,8 @@ Webコンソールにアクセスすると、下記のような画面が表示�
 これより先は、下記コンテンツを順番に実行していってください。このコンテンツではログインユーザとして`userXX`を指定していますが、本ハンズオンで利用するアカウント名に変更して読み替えてください。GogsリポジトリのURLは上記画面で表示されている、ご自身が作成したリポジトリのURLを利用してください。また、プロジェクトは何も作られていない状態ですので、`oc new-project`などで適宜作成する必要があります。
 
 また、下記コンテンツはOpenShift v4版スクリーンショットになりますが、AROは現在OpenShift v3ベースなので、Webインタフェースの表示が異なります。リソースメニューの表示場所も若干異なりますので、ご注意ください。
+
+**CodeReady WorkspacesのTerminalでは`oc`コマンドを最初から実行できるようになっています。本ハンズオンではCodeReady WorkspacesのTerminalでもARO環境へのログインを`oc`コマンドで実行する必要がありますので、忘れないようにしてください。**
 
 https://bit.ly/36w9HfQ
 
