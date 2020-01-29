@@ -29,6 +29,8 @@
   - ハンズオンコンテンツ自体は、Google Chrome以外のWebブラウザでも実行可能
 - ARO環境にログインできること (ハンズオン当日にご紹介)
 - Red Hat Codeready WorkspacesがARO上にデプロイされていること (ハンズオン当日にご紹介)
+  - 当日にデプロイする場合は下記の手順を実行してください。  
+  既にデプロイ済みの環境を利用する場合は、ハンズオンマテリアルのAかBを実行していってください。
 
 ### Red Hat CodeReady WorkspacesのAROへのデプロイ
 開発ツールとして利用する[Red Hat CodeReady Workspaces](https://developers.redhat.com/products/codeready-workspaces/overview)をARO上にデプロイします。Red Hat CodeReady WorkspacesはEclipse CheをベースにしたクラウドIDE(IntelliJ IDEA、VSCode、Eclipse IDEに類似)であり、本ハンズオンでは、ここからコードを記述、テスト、デプロイします。
