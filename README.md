@@ -120,6 +120,10 @@ https://bit.ly/36lLEAe
 CodeReady WorkspacesにあるWorkspaceのプロジェクトは、右クリックして`Delete...`を選択すると削除できます。ハンズオンコンテンツを最初からやり直してみたい場合などに、実行してください。
 
 ## B. Jenkins Pipelineによるアプリの自動デプロイとJavaアプリのリモートデバッグ
+### 前準備
+
+**ハンズオン当日に本ハンズオン専用のGogsサーバのURLを提示しますが、Gogsコンテナをデプロイして利用してみたい場合は下記の手順を実行してください。ご自身のGitHubのアカウント、または、本ハンズオン専用のGogsサーバをご利用いただく場合はこの手順はSkipして「Gogsサーバへのアクセス」に進んでください。**
+
 
 このハンズオンではオープンソースのセルフホステッドなGitサービスを提供する[Gogs](https://gogs.io/)を利用します。GogsはOpenShift上のコンテナアプリとしても構築・起動できます。Gogsコンテナアプリを構築するためのテンプレートファイルを利用して、AROにデプロイするために次のコマンドを実行します。`YOUR_ACCOUNT_NAME`は利用しているアカウント名に、`YOUR_SUB_DOMAIN`はAROのWebコンソールにアクセスするためのURLの`openshift`と`azmosa.io`の間にある文字列に適宜修正してください。(例えば`openshift.00a123.eastus.azmosa.io`の場合なら`YOUR_SUB_DOMAIN`は`00a123.eastus`になります。)
 
@@ -130,9 +134,13 @@ $ oc new-app https://raw.githubusercontent.com/OpenShiftDemos/gogs-openshift-doc
 --param=HOSTNAME=<YOUR_ACCOUNT_NAME>-gogs.apps.<YOUR_SUB_DOMAIN>.azmosa.io
 ```
 
-GogsサーバのWebコンソールにログインします。先程作成しました`<YOUR_ACCOUNT_NAME>-gogs`プロジェクトに表示されているURLです。
+GogsサーバのWebコンソールにアクセスします。先程作成しました`<YOUR_ACCOUNT_NAME>-gogs`プロジェクトに表示されているURLです。
 
 <img src="https://github.com/h-kojima/aro-handson/blob/master/images/gogs-url.png" width="100%" height="100%">
+
+### Gogsサーバへのアクセス
+
+**ご自身のGitHubアカウントを利用する場合は、下記の手順を参考にしながら指定したリポジトリをcloneしてください。**
 
 Webコンソールにアクセスすると、下記のような画面が表示されます。最初は何もアカウントが作成されていない状態ですので、右上の「登録」から新規アカウントを作成してログインします。
 
